@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'common/index.dart';
 import 'common/routers/pages.dart';
 
 void main() {
@@ -17,10 +18,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // 路由
-      initialRoute: "/",
-      getPages: RoutePages.list,
+      // // 路由
+      // initialRoute: "/",
+      // getPages: RoutePages.list,
       debugShowCheckedModeBanner: false,
+
+      // 路由
+      initialRoute: RouteNames.systemSplash,
+      getPages: RoutePages.list,
+      navigatorObservers: [RoutePages.observer],
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

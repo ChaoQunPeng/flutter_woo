@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_woo_commerce_getx_learn/common/style/theme.dart';
 import 'package:flutter_woo_commerce_getx_learn/global.dart';
 import 'package:get/get.dart';
 
@@ -17,11 +18,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
 
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.blue,
-          )),
+      // theme: ThemeData(
+      //     primarySwatch: Colors.blue,
+      //     appBarTheme: const AppBarTheme(
+      //       backgroundColor: Colors.blue,
+      //     )),
       // // 路由
       debugShowCheckedModeBanner: false,
 
@@ -37,6 +38,12 @@ class MyApp extends StatelessWidget {
       supportedLocales: Translation.supportedLocales, // 支持的语言种类
       locale: ConfigService.to.locale, // 当前语言种类
       fallbackLocale: Translation.fallbackLocale, // 默认语言种类
+      
+       // 样式
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      // 主题
+      themeMode: ConfigService.to.isDarkModel ? ThemeMode.dark : ThemeMode.light,
     );
   }
 }

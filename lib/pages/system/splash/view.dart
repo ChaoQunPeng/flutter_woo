@@ -2,11 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:13:39
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-01 21:54:43
+ * @LastEditTime: 2024-06-02 14:15:33
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/splash/view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
+import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/services/config.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +15,6 @@ import 'index.dart';
 
 class SplashPage extends GetView<SplashController> {
   const SplashPage({Key? key}) : super(key: key);
-
 
   // 主视图
   Widget _buildView() {
@@ -34,9 +34,10 @@ class SplashPage extends GetView<SplashController> {
         // 按钮
         ElevatedButton(
           onPressed: () {
-            controller.onTap(DateTime.now().microsecondsSinceEpoch);
+            Get.offAllNamed(RouteNames.stylesStyleIndex);
+            // controller.onTap(DateTime.now().microsecondsSinceEpoch);
           },
-          child: const Text("立刻点击"),
+          child: const Text("回到style_index页面"),
         ),
       ],
     );
@@ -49,7 +50,10 @@ class SplashPage extends GetView<SplashController> {
       id: "splash",
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: const Text("splash")),
+          appBar: AppBar(
+            title: const Text("splash 1"),
+            
+          ),
           body: SafeArea(
             child: _buildView(),
           ),

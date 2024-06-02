@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:48:51
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 12:01:30
+ * @LastEditTime: 2024-06-02 14:13:38
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/styles/style_index/controller.dart
  * @Description: 
  */
@@ -21,6 +21,12 @@ class StyleIndexController extends GetxController {
         ConfigService.to.locale.toLanguageTag() == en.toLanguageTag()
             ? zh
             : en);
+    update(["styles_index"]);
+  }
+
+  // 主题
+  onThemeSelected() async {
+    await ConfigService.to.switchThemeModel();
     update(["styles_index"]);
   }
 

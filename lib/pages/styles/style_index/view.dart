@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:48:51
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 11:56:25
+ * @LastEditTime: 2024-06-02 14:11:27
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/styles/style_index/view.dart
  * @Description: 
  */
@@ -19,11 +19,15 @@ class StyleIndexPage extends GetView<StyleIndexController> {
   Widget _buildView() {
     return Column(children: [
       ListTile(
+        onTap: controller.onThemeSelected,
+        title: Text("主题1 : ${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
+      ),
+      ListTile(
         onTap: controller.onLanguageSelected,
         title: Text(
-          "语言 : ${ConfigService.to.locale.toLanguageTag()} 123",
+          "语言 : ${ConfigService.to.locale.toLanguageTag()}",
         ),
-      ),
+      )
     ]);
   }
 

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 19:11:38
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 14:25:31
+ * @LastEditTime: 2024-06-02 15:08:11
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/services/config.dart
  * @Description: 
  */
@@ -55,6 +55,7 @@ class ConfigService extends GetxService {
     Get.changeThemeMode(
       _isDarkModel.value == true ? ThemeMode.dark : ThemeMode.light,
     );
+    
     await Storage().setString(Constants.storageThemeCode,
         _isDarkModel.value == true ? "dark" : "light");
 

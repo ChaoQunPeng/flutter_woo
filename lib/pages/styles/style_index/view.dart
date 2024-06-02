@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:48:51
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 14:11:27
+ * @LastEditTime: 2024-06-02 14:59:49
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/styles/style_index/view.dart
  * @Description: 
  */
@@ -20,7 +20,7 @@ class StyleIndexPage extends GetView<StyleIndexController> {
     return Column(children: [
       ListTile(
         onTap: controller.onThemeSelected,
-        title: Text("主题1 : ${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
+        title: Text("主题:${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
       ),
       ListTile(
         onTap: controller.onLanguageSelected,

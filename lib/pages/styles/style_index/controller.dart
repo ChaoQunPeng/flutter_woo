@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:48:51
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 14:13:38
+ * @LastEditTime: 2024-06-02 15:07:54
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/styles/style_index/controller.dart
  * @Description: 
  */

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_woo_commerce_getx_learn/global.dart';
 import 'package:get/get.dart';
 
 import 'common/index.dart';
-import 'common/routers/pages.dart';
 
-void main() {
+Future<void> main() async {
+  await Global.init();
   runApp(const MyApp());
 }
 
@@ -15,19 +16,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.blue,
+          )),
       // // 路由
-      // initialRoute: "/",
-      // getPages: RoutePages.list,
       debugShowCheckedModeBanner: false,
 
       // 路由
-      initialRoute: RouteNames.systemSplash,
+      initialRoute: RouteNames.stylesStyleIndex,
       getPages: RoutePages.list,
       navigatorObservers: [RoutePages.observer],
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+      // 多语言
+      translations: Translation(), // 词典
+      localizationsDelegates: Translation.localizationsDelegates, // 代理
+      supportedLocales: Translation.supportedLocales, // 支持的语言种类
+      locale: ConfigService.to.locale, // 当前语言种类
+      fallbackLocale: Translation.fallbackLocale, // 默认语言种类
     );
   }
 }

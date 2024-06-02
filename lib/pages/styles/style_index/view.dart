@@ -1,4 +1,13 @@
+/*
+ * @Author: PengChaoQun 1152684231@qq.com
+ * @Date: 2024-06-01 17:48:51
+ * @LastEditors: PengChaoQun 1152684231@qq.com
+ * @LastEditTime: 2024-06-02 11:56:25
+ * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/styles/style_index/view.dart
+ * @Description: 
+ */
 import 'package:flutter/material.dart';
+import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
@@ -8,9 +17,14 @@ class StyleIndexPage extends GetView<StyleIndexController> {
 
   // 主视图
   Widget _buildView() {
-    return const Center(
-      child: Text("StyleIndexPage"),
-    );
+    return Column(children: [
+      ListTile(
+        onTap: controller.onLanguageSelected,
+        title: Text(
+          "语言 : ${ConfigService.to.locale.toLanguageTag()} 123",
+        ),
+      ),
+    ]);
   }
 
   @override
@@ -20,7 +34,11 @@ class StyleIndexPage extends GetView<StyleIndexController> {
       id: "style_index",
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: const Text("style_index")),
+          // appBar: AppBar(title: const Text("style_index")),
+          appBar: AppBar(
+            title: Text(LocaleKeys.stylesTitle.tr),
+            titleTextStyle: const TextStyle(color: Colors.white),
+          ),
           body: SafeArea(
             child: _buildView(),
           ),

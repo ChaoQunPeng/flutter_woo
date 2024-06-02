@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:48:51
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 11:40:15
+ * @LastEditTime: 2024-06-02 12:01:30
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/styles/style_index/controller.dart
  * @Description: 
  */
@@ -16,9 +16,6 @@ class StyleIndexController extends GetxController {
   onLanguageSelected() {
     var en = Translation.supportedLocales[0];
     var zh = Translation.supportedLocales[1];
-
-    print(ConfigService.to.locale.toLanguageTag());
-    print(en.toLanguageTag());
 
     ConfigService.to.onLocaleUpdate(
         ConfigService.to.locale.toLanguageTag() == en.toLanguageTag()

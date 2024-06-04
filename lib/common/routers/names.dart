@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-01 18:21:42
+ * @LastEditTime: 2024-06-04 15:35:15
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/routers/names.dart
  * @Description: 
  */
@@ -45,4 +45,5 @@ class RouteNames {
   static const systemSplash = '/system_splash';
   static const systemUserAgreement = '/system_user_agreement';
   static const systemWelcome = '/system_welcome';
+  static const systemLoginQuick = '/system_login_quick';
 }

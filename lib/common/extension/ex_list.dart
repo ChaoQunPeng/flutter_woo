@@ -1,3 +1,11 @@
+/*
+ * @Author: PengChaoQun 1152684231@qq.com
+ * @Date: 2024-06-04 10:42:36
+ * @LastEditors: PengChaoQun 1152684231@qq.com
+ * @LastEditTime: 2024-06-04 15:24:23
+ * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/extension/ex_list.dart
+ * @Description: 
+ */
 import 'package:flutter/material.dart';
 
 /// 扩展 List<String>

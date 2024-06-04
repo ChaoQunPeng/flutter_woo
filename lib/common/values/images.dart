@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 19:07:00
+ * @LastEditTime: 2024-06-04 16:00:34
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/images.dart
  * @Description: 
  */
@@ -19,4 +19,6 @@ class AssetsImages {
   static const welcome_1Png = 'assets/images/welcome_1.png';
   static const welcome_2Png = 'assets/images/welcome_2.png';
   static const welcome_3Png = 'assets/images/welcome_3.png';
+  static const logoPng = 'assets/images/logo.png';
+  static const logo_3Png = 'assets/images/logo_3.png';
 }

@@ -8,7 +8,7 @@ import 'index.dart';
 class RoutePages {
   static final RouteObserver<Route> observer = RouteObservers();
   static List<String> history = [];
-  
+
   // 列表
   static List<GetPage> list = [
     GetPage(
@@ -163,6 +163,10 @@ class RoutePages {
     GetPage(
       name: RouteNames.systemWelcome,
       page: () => const WelcomePage(),
+    ),
+    GetPage(
+      name: RouteNames.systemLoginQuick,
+      page: () => const LoginQuickPage(),
     ),
   ];
 }

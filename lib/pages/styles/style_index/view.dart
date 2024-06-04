@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:48:51
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-04 00:00:42
+ * @LastEditTime: 2024-06-04 11:07:03
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/styles/style_index/view.dart
  * @Description: 
  */
@@ -18,6 +18,11 @@ class StyleIndexPage extends GetView<StyleIndexController> {
   // 主视图
   Widget _buildView() {
     return Column(children: [
+      // Button 按钮
+      ListTile(
+        onTap: () => Get.toNamed(RouteNames.stylesButtons),
+        title: const TextWidget.body1("Button 按钮"),
+      ),
       // 图片
       ListTile(
         onTap: () => Get.toNamed(RouteNames.stylesImage),

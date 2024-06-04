@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       // 路由
-      initialRoute: RouteNames.stylesImage,
+      initialRoute: RouteNames.stylesButtons,
       getPages: RoutePages.list,
       navigatorObservers: [RoutePages.observer],
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),

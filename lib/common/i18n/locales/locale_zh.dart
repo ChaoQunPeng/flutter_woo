@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 10:44:57
+ * @LastEditTime: 2024-06-05 14:03:05
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -24,4 +24,18 @@ Map<String, String> localeZh = {
 
   // 样式
   LocaleKeys.stylesTitle: '样式 && 功能 && 调试',
+
+  // welcome 欢迎
+  LocaleKeys.welcomeOneTitle: '选择您喜欢的产品',
+  LocaleKeys.welcomeOneDesc:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text',
+  LocaleKeys.welcomeTwoTitle: '完成您的购物',
+  LocaleKeys.welcomeTwoDesc:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text',
+  LocaleKeys.welcomeThreeTitle: '足不出户的购物体验',
+  LocaleKeys.welcomeThreeDesc:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text',
+  LocaleKeys.welcomeSkip: '跳过',
+  LocaleKeys.welcomeNext: '下一页',
+  LocaleKeys.welcomeStart: '立刻开始',
 };

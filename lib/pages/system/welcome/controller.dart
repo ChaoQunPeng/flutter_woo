@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:11
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 14:35:18
+ * @LastEditTime: 2024-06-05 15:05:42
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/welcome/controller.dart
  * @Description: 
  */
@@ -13,6 +13,13 @@ class WelcomeController extends GetxController {
   WelcomeController();
 
   List<WelcomeModel>? items;
+
+  int currentIndex = 0;
+
+  void onPageChanged(int index) {
+    currentIndex = index;
+    update(['slider', 'bar']);
+  }
 
   _initData() {
     items = [

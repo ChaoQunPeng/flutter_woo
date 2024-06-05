@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:11
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 14:49:01
+ * @LastEditTime: 2024-06-05 15:14:08
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/welcome/view.dart
  * @Description: 
  */
@@ -24,8 +24,26 @@ class WelcomePage extends GetView<WelcomeController> {
           ? const SizedBox()
           : WelcomeSliderWidget(
               controller.items!,
-              onPageChanged: (index) {},
+              onPageChanged: controller.onPageChanged,
             ),
+    );
+  }
+
+  Widget _buildBar() {
+    return GetBuilder<WelcomeController>(
+      id: "bar",
+      init: controller,
+      builder: (controller) {
+        return <Widget>[
+          // 指示标
+          SliderIndicatorWidget(
+            length: 3,
+            currentIndex: controller.currentIndex,
+          ),
+        ].toRow(
+          mainAxisAlignment: MainAxisAlignment.center,
+        );
+      },
     );
   }
 
@@ -36,9 +54,12 @@ class WelcomePage extends GetView<WelcomeController> {
       _buildSlider(),
 
       // 控制器
-    ].toColumn(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-    ).paddingAll(AppSpace.page);
+      _buildBar()
+    ]
+        .toColumn(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        )
+        .paddingAll(AppSpace.page);
   }
 
   @override

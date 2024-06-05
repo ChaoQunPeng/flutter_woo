@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 13:50:11
+ * @LastEditTime: 2024-06-05 17:21:09
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/constants.dart
  * @Description: 
  */
@@ -16,4 +16,7 @@ class Constants {
 
   // 主题色
   static const storageThemeCode = 'theme_code';
+
+  // 是否显示欢迎页面
+  static const storageAlreadyOpen = 'already_open';
 }

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 19:11:38
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 15:08:11
+ * @LastEditTime: 2024-06-05 17:21:20
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/services/config.dart
  * @Description: 
  */
@@ -29,6 +29,8 @@ class ConfigService extends GetxService {
   final RxBool _isDarkModel = Get.isDarkMode.obs;
   bool get isDarkModel => _isDarkModel.value;
 
+  bool get isFirstOpen => Storage().getBool(Constants.storageAlreadyOpen);
+
   @override
   void onReady() {
     super.onReady();
@@ -44,6 +46,10 @@ class ConfigService extends GetxService {
     return this;
   }
 
+  void setAlreadyOpen() {
+    Storage().setBool(Constants.storageAlreadyOpen, true);
+  }
+
   Future<void> getPlatform() async {
     _platform = await PackageInfo.fromPlatform();
   }
@@ -55,7 +61,7 @@ class ConfigService extends GetxService {
     Get.changeThemeMode(
       _isDarkModel.value == true ? ThemeMode.dark : ThemeMode.light,
     );
-    
+
     await Storage().setString(Constants.storageThemeCode,
         _isDarkModel.value == true ? "dark" : "light");
 

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:11
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 16:08:47
+ * @LastEditTime: 2024-06-05 17:03:08
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/welcome/controller.dart
  * @Description: 
  */
@@ -28,7 +28,7 @@ class WelcomeController extends GetxController {
 
   // 去首页
   void onToMain() {
-    // Get.offAllNamed(RouteNames.systemMain);
+    Get.offAllNamed(RouteNames.systemMain);
   }
 
   // 下一个
@@ -67,6 +67,9 @@ class WelcomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    
+    ConfigService.to.setAlreadyOpen();
+
     _initData();
   }
 

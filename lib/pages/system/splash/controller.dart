@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:13:39
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 14:45:16
+ * @LastEditTime: 2024-06-05 17:22:11
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/splash/controller.dart
  * @Description: 
  */
@@ -30,10 +30,13 @@ class SplashController extends GetxController {
   // }
 
   _jumpToPage() async {
-    // 欢迎页
-    await Future.delayed(const Duration(seconds: 1));
-
-    Get.offAllNamed(RouteNames.systemWelcome);
+    if (ConfigService.to.isFirstOpen) {
+      Get.offAllNamed(RouteNames.systemMain);
+    } else {
+      // 欢迎页
+      // await Future.delayed(const Duration(seconds: 2));
+      Get.offAllNamed(RouteNames.systemWelcome);
+    }
   }
 
   @override
@@ -41,6 +44,7 @@ class SplashController extends GetxController {
     super.onReady();
     // 删除设备启动图
     FlutterNativeSplash.remove();
+
     _jumpToPage();
     _initData();
   }

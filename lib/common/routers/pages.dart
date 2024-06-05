@@ -11,8 +11,13 @@ class RoutePages {
 
   // 列表
   static List<GetPage> list = [
+    // app 首页
     GetPage(
-      name: "/",
+      name: RouteNames.main,
+      page: () => const MainPage(),
+    ),
+    GetPage(
+      name: "/login",
       page: () => const LoginPage(),
       binding: LoginBinding(),
     ),
@@ -139,10 +144,6 @@ class RoutePages {
     GetPage(
       name: RouteNames.systemLogin,
       page: () => const LoginPage(),
-    ),
-    GetPage(
-      name: RouteNames.systemMain,
-      page: () => const MainPage(),
     ),
     GetPage(
       name: RouteNames.systemRegister,

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 14:02:54
+ * @LastEditTime: 2024-06-05 22:59:59
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -38,4 +38,21 @@ Map<String, String> localeEn = {
   LocaleKeys.welcomeSkip: 'Skip',
   LocaleKeys.welcomeNext: 'Next',
   LocaleKeys.welcomeStart: 'Get Started',
+
+  // 登录、注册 - 通用
+  LocaleKeys.loginForgotPassword: 'Forgot Password?',
+  LocaleKeys.loginSignIn: 'Sign In',
+  LocaleKeys.loginSignUp: 'Sign Up',
+  LocaleKeys.loginOrText: '- OR -',
+
+  // 注册 - new user
+  LocaleKeys.registerTitle: 'Register',
+  LocaleKeys.registerDesc: 'Sign up to continue',
+  LocaleKeys.registerFormName: 'User Name',
+  LocaleKeys.registerFormEmail: 'Email',
+  LocaleKeys.registerFormPhoneNumber: 'Phone number',
+  LocaleKeys.registerFormPassword: 'Password',
+  LocaleKeys.registerFormFirstName: 'First name',
+  LocaleKeys.registerFormLastName: 'Last name',
+  LocaleKeys.registerHaveAccount: 'Already have an account?',
 };

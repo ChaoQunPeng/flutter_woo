@@ -1,9 +1,9 @@
 /*
  * @Author: PengChaoQun 1152684231@qq.com
- * @Date: 2024-06-06 00:11:01
+ * @Date: 2024-06-01 16:33:25
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 00:14:09
- * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/register/view.dart
+ * @LastEditTime: 2024-06-06 00:17:15
+ * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/--register/view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
@@ -14,6 +14,7 @@ import 'index.dart';
 
 class RegisterPage extends GetView<RegisterController> {
   const RegisterPage({Key? key}) : super(key: key);
+
 
   // 主视图
   Widget _buildView() {
@@ -115,14 +116,9 @@ class RegisterPage extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<RegisterController>(
-      init: RegisterController(),
-      id: "register",
       builder: (_) {
         return Scaffold(
           appBar: AppBar(title: const Text("register")),
-          body: SafeArea(
-            child: _buildView(),
-          ),
         );
       },
     );

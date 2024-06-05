@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:13:39
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 17:22:11
+ * @LastEditTime: 2024-06-06 00:02:18
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/splash/controller.dart
  * @Description: 
  */
@@ -30,13 +30,14 @@ class SplashController extends GetxController {
   // }
 
   _jumpToPage() async {
-    if (ConfigService.to.isFirstOpen) {
-      Get.offAllNamed(RouteNames.systemMain);
-    } else {
-      // 欢迎页
-      // await Future.delayed(const Duration(seconds: 2));
-      Get.offAllNamed(RouteNames.systemWelcome);
-    }
+    Get.offAllNamed(RouteNames.main);
+    // if (ConfigService.to.isFirstOpen) {
+    //   Get.offAllNamed(RouteNames.systemMain);
+    // } else {
+    //   // 欢迎页
+    //   // await Future.delayed(const Duration(seconds: 2));
+    //   Get.offAllNamed(RouteNames.systemWelcome);
+    // }
   }
 
   @override

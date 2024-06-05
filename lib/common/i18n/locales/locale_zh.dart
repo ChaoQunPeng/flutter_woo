@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 14:03:05
+ * @LastEditTime: 2024-06-05 23:00:15
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -38,4 +38,21 @@ Map<String, String> localeZh = {
   LocaleKeys.welcomeSkip: '跳过',
   LocaleKeys.welcomeNext: '下一页',
   LocaleKeys.welcomeStart: '立刻开始',
+
+  // 登录、注册 - 通用
+  LocaleKeys.loginForgotPassword: '忘记密码?',
+  LocaleKeys.loginSignIn: '登 陆',
+  LocaleKeys.loginSignUp: '注 册',
+  LocaleKeys.loginOrText: '- 或者 -',
+
+  // 注册 - register user
+  LocaleKeys.registerTitle: '欢迎',
+  LocaleKeys.registerDesc: '注册新账号',
+  LocaleKeys.registerFormName: '登录账号',
+  LocaleKeys.registerFormEmail: '电子邮件',
+  LocaleKeys.registerFormPhoneNumber: '电话号码',
+  LocaleKeys.registerFormPassword: '密码',
+  LocaleKeys.registerFormFirstName: '姓',
+  LocaleKeys.registerFormLastName: '名',
+  LocaleKeys.registerHaveAccount: '你有现成账号?',
 };

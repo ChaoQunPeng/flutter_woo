@@ -1,8 +1,8 @@
 /*
  * @Author: PengChaoQun 1152684231@qq.com
- * @Date: 2024-06-06 00:11:01
+ * @Date: 2024-06-01 16:33:25
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 00:16:08
+ * @LastEditTime: 2024-06-06 00:05:31
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/register/controller.dart
  * @Description: 
  */
@@ -29,10 +29,6 @@ class RegisterController extends GetxController {
   TextEditingController passwordController =
       TextEditingController(text: "12345678");
 
-  _initData() {
-    update(["register"]);
-  }
-
   // tap
   void handleTap(int index) {
     Get.snackbar(
@@ -41,24 +37,23 @@ class RegisterController extends GetxController {
     );
   }
 
-  void onTap() {}
+  /// 在 widget 内存中分配后立即调用。
+  @override
+  void onInit() {
+    super.onInit();
+  }
+
+  /// 在 onInit() 之后调用 1 帧。这是进入的理想场所
+  @override
+  void onReady() {
+    super.onReady();
+  }
 
   // 注册
   void onSignUp() {}
 
   // 登录
   void onSignIn() {}
-
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-    _initData();
-  }
 
   // 释放
   @override

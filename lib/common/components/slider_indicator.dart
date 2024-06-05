@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-05 15:01:36
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 15:01:46
+ * @LastEditTime: 2024-06-05 16:18:53
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/components/slider_indicator.dart
  * @Description: 
  */
@@ -40,27 +40,28 @@ class SliderIndicatorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: alignment,
-
-      // 采用 list.generate 方式生成 item 项
-      children: List.generate(length, (index) {
-        return Container(
-          margin: const EdgeInsets.symmetric(horizontal: 3),
-          // 圆型宽度 6 , 否则当前位置 15 , 其他位置 8
-          width: !isCircle
-              ? currentIndex == index
-                  ? 15.0
-                  : 8
-              : 6,
-          // 圆型高度 6 , 否则 4
-          height: !isCircle ? 4 : 6,
-          decoration: BoxDecoration(
-            // 圆角 4
-            borderRadius: const BorderRadius.all(Radius.circular(4)),
-            // 非当前位置透明度 0.3
-            color: currentIndex == index ? color : color.withOpacity(0.3),
-          ),
-        );
-      }),
+      children: [
+        // 采用 list.generate 方式生成 item 项
+        ...List.generate(length, (index) {
+          return Container(
+            margin: const EdgeInsets.symmetric(horizontal: 3),
+            // 圆型宽度 6 , 否则当前位置 15 , 其他位置 8
+            width: !isCircle
+                ? currentIndex == index
+                    ? 15.0
+                    : 8
+                : 6,
+            // 圆型高度 6 , 否则 4
+            height: !isCircle ? 4 : 6,
+            decoration: BoxDecoration(
+              // 圆角 4
+              borderRadius: const BorderRadius.all(Radius.circular(4)),
+              // 非当前位置透明度 0.3
+              color: currentIndex == index ? color : color.withOpacity(0.3),
+            ),
+          );
+        }),
+      ].toList(),
     );
   }
 }

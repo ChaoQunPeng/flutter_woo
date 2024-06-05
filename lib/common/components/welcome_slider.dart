@@ -72,8 +72,8 @@ class WelcomeSliderWidget extends StatelessWidget {
         height: 500.w,
         viewportFraction: 1, // 充满
         enlargeCenterPage: false, // 动画 封面效果
-        enableInfiniteScroll: true, // 无限循环
-        autoPlay: true, // 自动播放
+        enableInfiniteScroll: false, // 无限循环
+        autoPlay: false, // 自动播放
         onPageChanged: (index, reason) => onPageChanged(index),
       ),
       items: items.map((item) => sliderItem(item)).toList(),

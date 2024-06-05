@@ -44,6 +44,8 @@ dependencies:
   badges: ^3.1.2
   extended_image: ^8.2.1
   flutter_screenutil: ^5.9.3
+  flutter_native_splash: ^2.2.16
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +67,10 @@ flutter_icons:
   # image_path_ios: "assets/icons/launcher_ios.png"
   # image_path_android: "assets/icons/launcher_ios.png"
   # adaptive_icon_background: "#ffffff"
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: "assets/icons/launcher_android.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

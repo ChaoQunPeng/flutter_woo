@@ -104,7 +104,6 @@ class WPHttpService extends GetxService {
   }
 }
 
-
 /// 拦截
 class RequestInterceptors extends Interceptor {
   @override
@@ -145,7 +144,8 @@ class RequestInterceptors extends Interceptor {
   // }
 
   @override
-  Future<void> onError(DioException err, ErrorInterceptorHandler handler) async {
+  Future<void> onError(
+      DioException err, ErrorInterceptorHandler handler) async {
     final exception = HttpException(err.message as String);
     switch (err.type) {
       case DioExceptionType.badResponse: // 服务端自定义错误体处理
@@ -177,7 +177,7 @@ class RequestInterceptors extends Interceptor {
       default:
         break;
     }
-    
+
     // err.error = exception;
     handler.next(err);
   }

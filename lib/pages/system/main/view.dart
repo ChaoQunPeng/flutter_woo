@@ -38,7 +38,7 @@ class _MainViewGetX extends GetView<MainController> {
   Widget _buildView() {
     return ElevatedButton(
       onPressed: () {
-         Get.toNamed(RouteNames.stylesStyleIndex);
+        Get.toNamed(RouteNames.stylesStyleIndex);
       },
       child: const Text("前往"),
     );

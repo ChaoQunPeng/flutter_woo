@@ -274,8 +274,7 @@ class InputWidget extends StatelessWidget {
         return InputBorder.none;
       default:
         return OutlineInputBorder(
-          borderSide:
-              BorderSide(color: borderColor ?? Colors.grey),
+          borderSide: BorderSide(color: borderColor ?? Colors.grey),
           borderRadius: BorderRadius.all(
               Radius.circular(borderRadius ?? AppRadius.input)),
         );

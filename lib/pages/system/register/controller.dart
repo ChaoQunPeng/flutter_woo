@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-06 00:11:01
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 13:11:19
+ * @LastEditTime: 2024-06-06 14:03:42
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/register/controller.dart
  * @Description: 
  */
@@ -44,11 +44,24 @@ class RegisterController extends GetxController {
 
   void onTap() {}
 
-  // 注册
+// 注册
   void onSignUp() {
     if ((formKey.currentState as FormState).validate()) {
-      // 验证通过提交数据
-      Get.toNamed(RouteNames.systemRegisterPin);
+      // aes 加密密码
+      // var password = EncryptUtil().aesEncode(passwordController.text);
+      var password = passwordController.text;
+
+      //验证通过
+      Get.offNamed(
+        RouteNames.systemRegisterPin,
+        arguments: UserRegisterReq(
+          username: userNameController.text,
+          email: emailController.text,
+          firstName: firstNameController.text,
+          lastName: lastNameController.text,
+          password: password,
+        ),
+      );
     }
   }
 

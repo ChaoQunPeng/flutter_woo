@@ -43,10 +43,8 @@ class LoginPage extends GetView<LoginController> {
     return GetBuilder<LoginController>(
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.blue,
-            title: const Text("login")
-          ),
+          appBar:
+              AppBar(backgroundColor: Colors.blue, title: const Text("login")),
           body: SafeArea(
             child: _buildView(),
           ),

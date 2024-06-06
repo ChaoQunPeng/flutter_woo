@@ -147,5 +147,4 @@ class ButtonsPage extends GetView<ButtonsController> {
       },
     );
   }
-
 }

@@ -168,7 +168,6 @@ class ImageWidget extends StatelessWidget {
     switch (state.extendedImageLoadState) {
       // 正在读取
       case LoadState.loading:
-      
         return _placeholder;
       // 读取成功
       case LoadState.completed:

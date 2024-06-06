@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-06 00:11:01
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 00:22:11
+ * @LastEditTime: 2024-06-06 10:34:32
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/register/controller.dart
  * @Description: 
  */
@@ -12,7 +12,7 @@ import 'package:get/get.dart';
 class RegisterController extends GetxController {
   RegisterController();
 
-  // final state = RegisterState();
+  GlobalKey formKey = GlobalKey<FormState>();
 
   // 用户名
   TextEditingController userNameController =
@@ -44,7 +44,11 @@ class RegisterController extends GetxController {
   void onTap() {}
 
   // 注册
-  void onSignUp() {}
+  void onSignUp() {
+    if ((formKey.currentState as FormState).validate()) {
+      // 验证通过提交数据
+    }
+  }
 
   // 登录
   void onSignIn() {}

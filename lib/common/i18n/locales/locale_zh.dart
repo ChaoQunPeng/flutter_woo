@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 23:00:15
+ * @LastEditTime: 2024-06-06 10:31:28
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -55,4 +55,11 @@ Map<String, String> localeZh = {
   LocaleKeys.registerFormFirstName: '姓',
   LocaleKeys.registerFormLastName: '名',
   LocaleKeys.registerHaveAccount: '你有现成账号?',
+
+  // 验证提示
+  LocaleKeys.validatorRequired: '字段不能为空',
+  LocaleKeys.validatorEmail: '请输入 email 格式',
+  LocaleKeys.validatorMin: '长度不能小于 @size',
+  LocaleKeys.validatorMax: '长度不能大于 @size',
+  LocaleKeys.validatorPassword: '密码长度必须 大于 @min 小于 @max',
 };

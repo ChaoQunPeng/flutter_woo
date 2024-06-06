@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 22:59:44
+ * @LastEditTime: 2024-06-06 10:30:58
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -50,4 +50,11 @@ class LocaleKeys {
   static const registerFormFirstName = 'register_form_first_name';
   static const registerFormLastName = 'register_form_last_name';
   static const registerHaveAccount = 'register_have_account';
+
+  // 验证提示
+  static const validatorRequired = 'validator_required';
+  static const validatorEmail = 'validator_email';
+  static const validatorMin = 'validator_min';
+  static const validatorMax = 'validator_max';
+  static const validatorPassword = 'validator_password';
 }

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 12:36:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 12:59:25
+ * @LastEditTime: 2024-06-06 15:30:12
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/services/wp_http.dart
  * @Description: 
  */
@@ -104,6 +104,12 @@ class WPHttpService extends GetxService {
   }
 }
 
+// 退出并重新登录
+Future<void> _errorNoAuthLogout() async {
+  // await UserService.to.logout();
+  Get.toNamed(RouteNames.systemLogin);
+}
+
 /// 拦截
 class RequestInterceptors extends Interceptor {
   @override
@@ -137,35 +143,29 @@ class RequestInterceptors extends Interceptor {
     }
   }
 
-  /// 退出并重新登录
-  // Future<void> _errorNoAuthLogout() async {
-  //   await UserService.to.logout();
-  //   Get.toNamed(RouteNames.systemLogin);
-  // }
-
   @override
   Future<void> onError(
       DioException err, ErrorInterceptorHandler handler) async {
-    final exception = HttpException(err.message as String);
+    final exception = HttpException(err.message ?? "");
     switch (err.type) {
       case DioExceptionType.badResponse: // 服务端自定义错误体处理
         {
-          // final response = err.response;
-          // final errorMessage = ErrorMessageModel.fromJson(response?.data);
-          // switch (errorMessage.statusCode) {
-          //   case 401:
-          //     _errorNoAuthLogout();
-          //     break;
-          //   case 404:
-          //     break;
-          //   case 500:
-          //     break;
-          //   case 502:
-          //     break;
-          //   default:
-          //     break;
-          // }
-          // Loading.error(errorMessage.message);
+          final response = err.response;
+          final errorMessage = ErrorMessageModel.fromJson(response?.data);
+          switch (errorMessage.statusCode) {
+            case 401:
+              _errorNoAuthLogout();
+              break;
+            case 404:
+              break;
+            case 500:
+              break;
+            case 502:
+              break;
+            default:
+              break;
+          }
+          Loading.error(errorMessage.message);
         }
         break;
       case DioExceptionType.unknown:
@@ -178,7 +178,10 @@ class RequestInterceptors extends Interceptor {
         break;
     }
 
-    // err.error = exception;
-    handler.next(err);
+    DioException errNext = err.copyWith(
+      error: exception,
+    );
+
+    handler.next(errNext);
   }
 }

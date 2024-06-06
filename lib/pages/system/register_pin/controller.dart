@@ -2,10 +2,11 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:20
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 14:12:47
+ * @LastEditTime: 2024-06-06 14:45:56
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/register_pin/controller.dart
  * @Description: 
  */
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
@@ -35,17 +36,20 @@ class RegisterPinController extends GetxController {
       Loading.show();
 
       // 暂时提交，后续改 aes 加密后处理
-      // bool isOk = await UserApi.register(req);
-      // if (isOk) {
-      //   Loading.success(
-      //       LocaleKeys.commonMessageSuccess.trParams({"method": "Register"}));
-      //   Get.back(result: true);
-      // }
+      bool isOk = await UserApi.register(req);
+      if (isOk) {
+        Loading.success(
+            LocaleKeys.commonMessageSuccess.trParams({"method": "Register"}));
+        Get.back(result: true);
+      }
 
       // 提示成功
-      Loading.success(
-          LocaleKeys.commonMessageSuccess.trParams({"method": "Register"}));
-      Get.back(result: true);
+      // Loading.success(
+      //     LocaleKeys.commonMessageSuccess.trParams({"method": "Register"}));
+      // Get.back(result: true);
+    } on DioExceptionType catch (e) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx and is also not 304.
     } finally {
       Loading.dismiss();
     }

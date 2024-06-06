@@ -1,8 +1,8 @@
 /*
  * @Author: PengChaoQun 1152684231@qq.com
- * @Date: 2024-06-06 00:11:01
+ * @Date: 2024-06-01 16:33:25
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 00:14:09
+ * @LastEditTime: 2024-06-06 00:19:54
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/register/view.dart
  * @Description: 
  */

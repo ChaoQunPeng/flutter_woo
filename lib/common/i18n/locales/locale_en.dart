@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 10:31:13
+ * @LastEditTime: 2024-06-06 13:03:27
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -63,4 +63,10 @@ Map<String, String> localeEn = {
   LocaleKeys.validatorMax: 'Length cannot be greater than @size',
   LocaleKeys.validatorPassword:
       'password must have between @min and @max digits',
+
+  // 注册PIN - register pin
+  LocaleKeys.registerPinTitle: 'Verification',
+  LocaleKeys.registerPinDesc: 'we will send you a Pin to continue your account',
+  LocaleKeys.registerPinFormTip: 'Pin',
+  LocaleKeys.registerPinButton: 'Submit',
 };

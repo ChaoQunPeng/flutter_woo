@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 14:33:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 14:36:14
+ * @LastEditTime: 2024-06-06 13:23:19
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/style/colors.dart
  * @Description: 
  */
@@ -28,7 +28,7 @@ class AppColors {
   /// Material System
   /// *******************************************
 
-  static Color get background => Get.theme.colorScheme.background;
+  static Color get background => Get.theme.colorScheme.surface;
 
   static Brightness get brightness => Get.theme.colorScheme.brightness;
 
@@ -40,7 +40,7 @@ class AppColors {
 
   static Color get inverseSurface => Get.theme.colorScheme.inverseSurface;
 
-  static Color get onBackground => Get.theme.colorScheme.onBackground;
+  static Color get onBackground => Get.theme.colorScheme.onSurface;
 
   static Color get onError => Get.theme.colorScheme.onError;
 
@@ -82,7 +82,7 @@ class AppColors {
 
   static Color get surface => Get.theme.colorScheme.surface;
 
-  static Color get surfaceVariant => Get.theme.colorScheme.surfaceVariant;
+  static Color get surfaceVariant => Get.theme.colorScheme.surfaceContainerHighest;
 
   static Color get tertiary => Get.theme.colorScheme.tertiary;
 

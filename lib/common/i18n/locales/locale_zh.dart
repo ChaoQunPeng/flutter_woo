@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 10:31:28
+ * @LastEditTime: 2024-06-06 13:03:38
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -62,4 +62,10 @@ Map<String, String> localeZh = {
   LocaleKeys.validatorMin: '长度不能小于 @size',
   LocaleKeys.validatorMax: '长度不能大于 @size',
   LocaleKeys.validatorPassword: '密码长度必须 大于 @min 小于 @max',
+
+  // 注册PIN - register pin
+  LocaleKeys.registerPinTitle: '验证',
+  LocaleKeys.registerPinDesc: '我们将向您发送PIN码以继续您的帐户',
+  LocaleKeys.registerPinFormTip: 'Pin',
+  LocaleKeys.registerPinButton: '提交',
 };

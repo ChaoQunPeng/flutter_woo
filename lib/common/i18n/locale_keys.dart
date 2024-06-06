@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 10:30:58
+ * @LastEditTime: 2024-06-06 13:03:09
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -57,4 +57,10 @@ class LocaleKeys {
   static const validatorMin = 'validator_min';
   static const validatorMax = 'validator_max';
   static const validatorPassword = 'validator_password';
+
+  // 注册PIN - register pin
+  static const registerPinTitle = 'register_pin_title';
+  static const registerPinDesc = 'register_pin_desc';
+  static const registerPinFormTip = 'register_pin_form_tip';
+  static const registerPinButton = 'register_pin_button';
 }

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-05 17:53:54
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 10:56:59
+ * @LastEditTime: 2024-06-06 13:27:05
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/widgets/text_form.dart
  * @Description: 
  */
@@ -110,6 +110,11 @@ class _TextFormWidgetState extends State<TextFormWidget> {
               ),
             )
           : InputDecoration(
+              border: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                color: Colors.black,
+                style: BorderStyle.solid,
+              )),
               hintText: widget.hintText,
               labelText: widget.isMustBeEnter == true
                   ? "* ${widget.labelText}"

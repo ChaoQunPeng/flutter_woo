@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-06 10:45:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 10:48:36
+ * @LastEditTime: 2024-06-06 13:23:40
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/components/pin.dart
  * @Description: 
  */
@@ -44,7 +44,7 @@ class PinPutWidget extends StatelessWidget {
           // color: AppColors.surfaceVariant,
           fontWeight: FontWeight.w600),
       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.surfaceVariant),
+        border: Border.all(color: AppColors.secondary),
         borderRadius: BorderRadius.circular(5),
       ),
     );

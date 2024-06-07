@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 15:22:34
+ * @LastEditTime: 2024-06-07 15:21:27
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/constants.dart
  * @Description: 
  */
@@ -21,4 +21,7 @@ class Constants {
 
   // 是否显示欢迎页面
   static const storageAlreadyOpen = 'already_open';
+
+  static const storageToken = 'token'; // 登录成功后 token
+  static const storageProfile = 'profile'; // 用户资料缓存
 }

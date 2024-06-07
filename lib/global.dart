@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 19:17:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 13:42:41
+ * @LastEditTime: 2024-06-07 23:51:59
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/global.dart
  * @Description: 
  */
@@ -17,20 +17,17 @@ class Global {
     FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
     // 工具类
+    await Storage().init();
+
     Loading();
 
     // 初始化原生应用相关的东西
     WidgetsFlutterBinding.ensureInitialized();
 
-    // Get.put<ConfigService>(ConfigService());
-
-    // 工具类
-    await Storage().init();
-
     await Future.wait([
       Get.putAsync<ConfigService>(() async => await ConfigService().init()),
     ]).whenComplete(() {});
-
     Get.put<WPHttpService>(WPHttpService());
+    Get.put<UserService>(UserService());
   }
 }

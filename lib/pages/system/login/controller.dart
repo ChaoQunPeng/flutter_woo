@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:33:16
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-07 15:20:44
+ * @LastEditTime: 2024-06-07 23:54:44
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/login/controller.dart
  * @Description: 
  */
@@ -34,10 +34,21 @@ class LoginController extends GetxController {
   /// Sign In
   Future<void> onSignIn() async {
     if ((formKey.currentState as FormState).validate()) {
-
       try {
         Loading.show();
 
+        // api 请求
+        UserTokenModel res = await UserApi.login(UserLoginReq(
+          username: userNameController.text,
+          password: passwordController.text,
+        ));
+
+        // 本地保存 token
+        await UserService.to.setToken(res.token!);
+        // 获取用户资料
+        await UserService.to.getProfile();
+
+        Loading.success();
         Get.back(result: true);
       } finally {
         Loading.dismiss();

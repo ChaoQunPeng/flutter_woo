@@ -2,11 +2,10 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-02 18:51:33
+ * @LastEditTime: 2024-06-07 15:07:32
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/svgs.dart
  * @Description: 
  */
-/// svgs assets
 class AssetsSvgs {
   static const cBagSvg = 'assets/svgs/c-bag.svg';
   static const cBikeSvg = 'assets/svgs/c-bike.svg';
@@ -44,5 +43,8 @@ class AssetsSvgs {
   static const pGiftSvg = 'assets/svgs/p-gift.svg';
   static const pHomeSvg = 'assets/svgs/p-home.svg';
   static const pNotificationsSvg = 'assets/svgs/p-notifications.svg';
+  static const pThemeSvg = 'assets/svgs/p-theme.svg';
   static const pTranslateSvg = 'assets/svgs/p-translate.svg';
+  static const profileHeaderBackgroundSvg =
+      'assets/svgs/profile-header-background.svg';
 }

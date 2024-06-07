@@ -2,10 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:33:16
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-01 16:59:45
+ * @LastEditTime: 2024-06-07 15:20:44
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/login/controller.dart
  * @Description: 
  */
+import 'package:flutter/material.dart';
+import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
@@ -15,9 +17,37 @@ class LoginController extends GetxController {
 
   final state = LoginState();
 
+  /// 定义输入控制器
+  TextEditingController userNameController =
+      TextEditingController(text: "ducafecat5");
+  TextEditingController passwordController =
+      TextEditingController(text: "123456");
+
+  /// 表单 key
+  GlobalKey formKey = GlobalKey<FormState>();
+
   // tap
   void onTap(int index) {
     state.title = '点击了第$index个按钮';
+  }
+
+  /// Sign In
+  Future<void> onSignIn() async {
+    if ((formKey.currentState as FormState).validate()) {
+
+      try {
+        Loading.show();
+
+        Get.back(result: true);
+      } finally {
+        Loading.dismiss();
+      }
+    }
+  }
+
+  /// Sign Up
+  void onSignUp() {
+    Get.offNamed(RouteNames.systemRegister);
   }
 
   /// 在 widget 内存中分配后立即调用。
@@ -33,9 +63,12 @@ class LoginController extends GetxController {
   }
 
   /// 在 [onDelete] 方法之前调用。
+  /// 释放
   @override
   void onClose() {
     super.onClose();
+    userNameController.dispose();
+    passwordController.dispose();
   }
 
   /// dispose 释放内存

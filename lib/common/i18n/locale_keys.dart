@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 13:03:09
+ * @LastEditTime: 2024-06-07 14:40:18
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -63,4 +63,10 @@ class LocaleKeys {
   static const registerPinDesc = 'register_pin_desc';
   static const registerPinFormTip = 'register_pin_form_tip';
   static const registerPinButton = 'register_pin_button';
+
+  // 登录 - back login
+  static const loginBackTitle = 'login_back_title';
+  static const loginBackDesc = 'login_back_desc';
+  static const loginBackFieldEmail = 'login_back_field_email';
+  static const loginBackFieldPassword = 'login_back_field_password';
 }

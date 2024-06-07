@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-05 17:53:54
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 13:27:05
+ * @LastEditTime: 2024-06-07 15:02:37
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/widgets/text_form.dart
  * @Description: 
  */
@@ -88,6 +88,11 @@ class _TextFormWidgetState extends State<TextFormWidget> {
       controller: widget.controller, // 控制器
       decoration: widget.isObscure == true
           ? InputDecoration(
+              border: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                color: Colors.black,
+                style: BorderStyle.solid,
+              )),
               hintText: widget.hintText, // 提示文字
               // 标题
               labelText: widget.isMustBeEnter == true

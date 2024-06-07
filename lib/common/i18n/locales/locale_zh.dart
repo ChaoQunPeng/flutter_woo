@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-06 13:03:38
+ * @LastEditTime: 2024-06-07 14:40:42
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -68,4 +68,10 @@ Map<String, String> localeZh = {
   LocaleKeys.registerPinDesc: '我们将向您发送PIN码以继续您的帐户',
   LocaleKeys.registerPinFormTip: 'Pin',
   LocaleKeys.registerPinButton: '提交',
+
+  // 登录 - back login
+  LocaleKeys.loginBackTitle: '欢迎登陆!',
+  LocaleKeys.loginBackDesc: '登陆后继续',
+  LocaleKeys.loginBackFieldEmail: '账号',
+  LocaleKeys.loginBackFieldPassword: '登陆密码',
 };

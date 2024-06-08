@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-07 14:40:42
+ * @LastEditTime: 2024-06-08 09:42:30
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -74,4 +74,10 @@ Map<String, String> localeZh = {
   LocaleKeys.loginBackDesc: '登陆后继续',
   LocaleKeys.loginBackFieldEmail: '账号',
   LocaleKeys.loginBackFieldPassword: '登陆密码',
+
+  // APP 导航
+  LocaleKeys.tabBarHome: '首页',
+  LocaleKeys.tabBarCart: '购物车',
+  LocaleKeys.tabBarMessage: '消息',
+  LocaleKeys.tabBarProfile: '我的',
 };

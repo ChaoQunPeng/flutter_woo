@@ -1,16 +1,8 @@
-/*
- * @Author: PengChaoQun 1152684231@qq.com
- * @Date: 2024-06-01 17:52:02
- * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 22:41:47
- * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/main/view.dart
- * @Description: 
- */
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
+import 'package:flutter_woo_commerce_getx_learn/pages/index.dart';
 import 'package:get/get.dart';
-
-import 'index.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -36,27 +28,80 @@ class _MainViewGetX extends GetView<MainController> {
 
   // 主视图
   Widget _buildView() {
-    return ElevatedButton(
-      onPressed: () {
-        Get.toNamed(RouteNames.stylesStyleIndex);
+    DateTime? lastPressedAt;
+    return WillPopScope(
+      // 防止连续点击两次退出
+      onWillPop: () async {
+        if (lastPressedAt == null ||
+            DateTime.now().difference(lastPressedAt!) >
+                const Duration(seconds: 1)) {
+          lastPressedAt = DateTime.now();
+          Loading.toast('Press again to exit');
+          return false;
+        }
+        await SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+        return true;
       },
-      child: const Text("前往"),
+      child: Scaffold(
+        extendBody: true,
+        resizeToAvoidBottomInset: false,
+        // 导航栏
+        bottomNavigationBar: GetBuilder<MainController>(
+          id: 'navigation',
+          builder: (controller) {
+            return BuildNavigation(
+              currentIndex: controller.currentIndex,
+              items: [
+                NavigationItemModel(
+                  label: LocaleKeys.tabBarHome.tr,
+                  icon: AssetsSvgs.navHomeSvg,
+                ),
+                NavigationItemModel(
+                  label: LocaleKeys.tabBarCart.tr,
+                  icon: AssetsSvgs.navCartSvg,
+                  count: 3,
+                ),
+                NavigationItemModel(
+                  label: LocaleKeys.tabBarMessage.tr,
+                  icon: AssetsSvgs.navMessageSvg,
+                  count: 9,
+                ),
+                NavigationItemModel(
+                  label: LocaleKeys.tabBarProfile.tr,
+                  icon: AssetsSvgs.navProfileSvg,
+                ),
+              ],
+              onTap: controller.onJumpToPage, // 切换tab事件
+            );
+          },
+        ),
+        appBar: AppBar(
+          title: const Text("main"),
+        ),
+        // 内容页
+        body: PageView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: controller.pageController,
+          onPageChanged: controller.onIndexChanged,
+          children: const [
+            // 这里已经生效了，但是视图在顶部，没显示，差点以为没生效
+            // 加入空页面占位
+            Center(child: Text("1", style: TextStyle(fontSize: 30))),
+            Center(child: Text("2", style: TextStyle(fontSize: 30))),
+            Center(child: Text("3", style: TextStyle(fontSize: 30))),
+            Center(child: Text("4", style: TextStyle(fontSize: 30)))
+          ],
+        ),
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MainController>(
-      init: MainController(),
+      // init: Get.find<MainController>(),
       id: "main",
-      builder: (_) {
-        return Scaffold(
-          appBar: AppBar(title: const Text("main123")),
-          body: SafeArea(
-            child: _buildView(),
-          ),
-        );
-      },
+      builder: (_) => _buildView(),
     );
   }
 }

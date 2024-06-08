@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_woo_commerce_getx_learn/pages/index.dart';
+
 import 'package:get/get.dart';
 
 import 'index.dart';
@@ -15,11 +16,12 @@ class RoutePages {
     GetPage(
       name: RouteNames.main,
       page: () => const MainPage(),
+      binding: MainBinding(),
     ),
     GetPage(
       name: "/login",
       page: () => const LoginPage(),
-      binding: LoginBinding(),
+      // binding: LoginBinding(),
     ),
     GetPage(
       name: "/splash",

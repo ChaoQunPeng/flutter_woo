@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-04 15:36:38
+ * @LastEditTime: 2024-06-08 13:00:37
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/index.dart
  * @Description: 
  */
@@ -46,3 +46,4 @@ export 'system/splash/index.dart';
 export 'system/user_agreement/index.dart';
 export 'system/welcome/index.dart';
 export 'system/login_quick/index.dart';
+export 'msg/msg_index/index.dart';

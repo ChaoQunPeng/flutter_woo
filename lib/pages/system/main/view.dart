@@ -75,9 +75,9 @@ class _MainViewGetX extends GetView<MainController> {
             );
           },
         ),
-        appBar: AppBar(
-          title: const Text("main"),
-        ),
+        // appBar: AppBar(
+        //   title: const Text("main"),
+        // ),
         // 内容页
         body: PageView(
           physics: const NeverScrollableScrollPhysics(),
@@ -86,10 +86,10 @@ class _MainViewGetX extends GetView<MainController> {
           children: const [
             // 这里已经生效了，但是视图在顶部，没显示，差点以为没生效
             // 加入空页面占位
-            Center(child: Text("1", style: TextStyle(fontSize: 30))),
-            Center(child: Text("2", style: TextStyle(fontSize: 30))),
-            Center(child: Text("3", style: TextStyle(fontSize: 30))),
-            Center(child: Text("4", style: TextStyle(fontSize: 30)))
+            HomePage(),
+            CartIndexPage(),
+            MsgIndexPage(),
+            MyIndexPage(),
           ],
         ),
       ),

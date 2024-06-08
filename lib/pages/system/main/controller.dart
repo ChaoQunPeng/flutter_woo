@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:52:02
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-08 12:32:02
+ * @LastEditTime: 2024-06-08 13:01:38
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/main/controller.dart
  * @Description: 
  */
@@ -35,7 +35,7 @@ class MainController extends GetxController {
     await UserService.to.getProfile();
 
     // 测试用
-    Get.toNamed(RouteNames.systemLogin);
+    // Get.toNamed(RouteNames.systemLogin);
 
     update(["main"]);
   }

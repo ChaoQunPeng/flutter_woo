@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:33:16
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-07 23:54:44
+ * @LastEditTime: 2024-06-08 09:35:02
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/login/controller.dart
  * @Description: 
  */
@@ -37,10 +37,13 @@ class LoginController extends GetxController {
       try {
         Loading.show();
 
+          // aes 加密密码
+        var password = EncryptUtil().aesEncode(passwordController.text);
+
         // api 请求
         UserTokenModel res = await UserApi.login(UserLoginReq(
           username: userNameController.text,
-          password: passwordController.text,
+          password: password
         ));
 
         // 本地保存 token

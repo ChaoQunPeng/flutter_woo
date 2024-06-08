@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-07 15:21:27
+ * @LastEditTime: 2024-06-08 09:34:09
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/constants.dart
  * @Description: 
  */
@@ -24,4 +24,8 @@ class Constants {
 
   static const storageToken = 'token'; // 登录成功后 token
   static const storageProfile = 'profile'; // 用户资料缓存
+
+  // AES
+  static const aesKey = 'aH5aH5bG0dC6aA3oN0cK4aU5jU6aK2lN';
+  static const aesIV = 'hK6eB4aE1aF3gH5q';
 }

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-06 00:11:01
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-07 14:44:11
+ * @LastEditTime: 2024-06-08 09:35:56
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/register/controller.dart
  * @Description: 
  */
@@ -48,8 +48,8 @@ class RegisterController extends GetxController {
   void onSignUp() {
     if ((formKey.currentState as FormState).validate()) {
       // aes 加密密码
-      // var password = EncryptUtil().aesEncode(passwordController.text);
-      var password = passwordController.text;
+      var password = EncryptUtil().aesEncode(passwordController.text);
+      // var password = passwordController.text;
 
       //验证通过
       Get.offNamed(

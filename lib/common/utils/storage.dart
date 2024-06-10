@@ -2,10 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 21:44:08
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-01 21:44:20
+ * @LastEditTime: 2024-06-10 17:42:57
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/utils/storage.dart
  * @Description: 
  */
+
+import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -48,5 +50,9 @@ class Storage {
 
   Future<bool> remove(String key) async {
     return await _prefs.remove(key);
+  }
+
+  Future<bool> setJson(String key, Object value) async {
+    return await _prefs.setString(key, jsonEncode(value));
   }
 }

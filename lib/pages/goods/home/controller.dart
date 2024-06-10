@@ -2,10 +2,11 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 17:33:04
+ * @LastEditTime: 2024-06-10 17:44:22
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/controller.dart
  * @Description: 
  */
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter_woo_commerce_getx_learn/common/api/product.dart';
@@ -123,9 +124,54 @@ class HomeController extends GetxController {
     // 新商品
     newProductProductList = await ProductApi.products(ProductsReq());
 
+    // 保存离线数据
+    Storage().setJson(Constants.storageHomeBanner, bannerItems);
+    Storage().setJson(Constants.storageHomeCategories, categoryItems);
+    Storage().setJson(Constants.storageHomeFlashSell, flashShellProductList);
+    Storage().setJson(Constants.storageHomeNewSell, newProductProductList);
+
     await Future.delayed(const Duration(seconds: 1));
 
     update(["home"]);
+  }
+
+  // 读取缓存
+  Future<void> _loadCacheData() async {
+    var stringBanner = Storage().getString(Constants.storageHomeBanner);
+    var stringCategories = Storage().getString(Constants.storageHomeCategories);
+    var stringFlashSell = Storage().getString(Constants.storageHomeFlashSell);
+    var stringNewSell = Storage().getString(Constants.storageHomeNewSell);
+
+    bannerItems = stringBanner != ""
+        ? jsonDecode(stringBanner).map<KeyValueModel>((item) {
+            return KeyValueModel.fromJson(item);
+          }).toList()
+        : [];
+
+    categoryItems = stringCategories != ""
+        ? jsonDecode(stringCategories).map<CategoryModel>((item) {
+            return CategoryModel.fromJson(item);
+          }).toList()
+        : [];
+
+    flashShellProductList = stringFlashSell != ""
+        ? jsonDecode(stringFlashSell).map<ProductModel>((item) {
+            return ProductModel.fromJson(item);
+          }).toList()
+        : [];
+
+    newProductProductList = stringNewSell != ""
+        ? jsonDecode(stringNewSell).map<ProductModel>((item) {
+            return ProductModel.fromJson(item);
+          }).toList()
+        : [];
+
+    if (bannerItems.isNotEmpty ||
+        categoryItems.isNotEmpty ||
+        flashShellProductList.isNotEmpty ||
+        newProductProductList.isNotEmpty) {
+      update(["home"]);
+    }
   }
 
   void onTap() {}
@@ -136,10 +182,11 @@ class HomeController extends GetxController {
   // ALL 点击事件
   void onAllTap(bool featured) {}
 
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  // }
+  @override
+  void onInit() {
+    super.onInit();
+    _loadCacheData();
+  }
 
   @override
   void onReady() {

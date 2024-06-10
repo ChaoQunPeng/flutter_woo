@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 13:46:32
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-08 13:06:53
+ * @LastEditTime: 2024-06-10 09:40:50
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/style/theme.dart
  * @Description: 
  */
@@ -20,6 +20,7 @@ class AppTheme {
     fontFamily: "Montserrat",
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.light, // 相反appBar 亮色 , 和主题色相反
+      // backgroundColor: Colors.black
     ),
   );
 
@@ -30,6 +31,7 @@ class AppTheme {
     fontFamily: "Montserrat",
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.dark, // appBar 暗色 , 和主题色
+      // backgroundColor: Colors.black
     ),
   );
 }

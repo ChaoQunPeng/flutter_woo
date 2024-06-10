@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-08 09:42:07
+ * @LastEditTime: 2024-06-09 21:50:20
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -75,4 +75,10 @@ class LocaleKeys {
   static const tabBarCart = 'tab_bar_cart';
   static const tabBarMessage = 'tab_bar_message';
   static const tabBarProfile = 'tab_bar_profile';
+
+  // 商品 - 首页
+  static const gHomeSearch = 'goods_home_search';
+  static const gHomeFlashSell = 'goods_home_flash_shell';
+  static const gHomeNewProduct = 'goods_home_new_product';
+  static const gHomeMore = 'goods_home_more';
 }

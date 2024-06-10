@@ -2,21 +2,14 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-10 10:17:59
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 10:54:03
+ * @LastEditTime: 2024-06-10 11:46:11
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/models/woo/category_model/category_model.dart
  * @Description: 
  */
 import 'image.dart';
 import 'links.dart';
 
-class ModelToString {
-  
-  String toString2(Type? type) {
-    return 'hahhaha';
-  }
-}
-
-class CategoryModel extends ModelToString {
+class CategoryModel {
   int? id;
   String? name;
   String? slug;

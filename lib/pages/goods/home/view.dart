@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 09:59:06
+ * @LastEditTime: 2024-06-10 11:48:47
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/view.dart
  * @Description: 
  */
@@ -71,7 +71,18 @@ class HomePage extends GetView<HomeController> {
 
   // 分类导航
   Widget _buildCategories() {
-    return Container()
+    return <Widget>[
+      for (var i = 0; i < controller.categoryItems.length; i++)
+        CategoryListItemWidget(
+          category: controller.categoryItems[i],
+          onTap: (categoryId) => controller.onCategoryTap(categoryId),
+        ).paddingRight(AppSpace.listItem)
+    ]
+        .toListView(
+          scrollDirection: Axis.horizontal,
+        )
+        .height(90.w)
+        .paddingVertical(AppSpace.listRow)
         .sliverToBoxAdapter()
         .sliverPaddingHorizontal(AppSpace.page);
   }

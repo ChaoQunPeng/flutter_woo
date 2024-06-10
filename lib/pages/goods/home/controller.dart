@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 10:59:31
+ * @LastEditTime: 2024-06-10 11:52:05
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/controller.dart
  * @Description: 
  */
@@ -32,19 +32,18 @@ class HomeController extends GetxController {
     update(["home_banner"]);
   }
 
+  // 分类点击事件
+  void onCategoryTap(int categoryId) {}
+
   _initData() async {
     // 首页
     // banner
     bannerItems = await SystemApi.banners();
     // 分类
     categoryItems = await ProductApi.categories();
-
-
     // 推荐商品
     flashShellProductList =
         await ProductApi.products(ProductsReq(featured: true));
-
-    
     // 新商品
     newProductProductList = await ProductApi.products(ProductsReq());
 

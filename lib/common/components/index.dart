@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 17:32:01
+ * @LastEditTime: 2024-06-10 22:59:44
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/components/index.dart
  * @Description: 
  */
@@ -16,3 +16,4 @@ export 'carousel.dart';
 export 'category_item.dart';
 export 'product_item.dart';
 export 'placehold.dart';
+export 'appbar.dart';

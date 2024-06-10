@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/style/theme.dart';
 import 'package:flutter_woo_commerce_getx_learn/global.dart';
 import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'common/index.dart';
 
@@ -22,47 +23,56 @@ class MyApp extends StatelessWidget {
       // splitScreenMode: false, // 支持分屏尺寸
       // minTextAdapt: false, // 是否根据宽 度/高度中的最小值适配文字
       builder: (context, child) {
-        return GetMaterialApp(
-          title: 'Flutter Demo',
-          // theme: ThemeData(
-          //     primarySwatch: Colors.blue,
-          //     appBarTheme: const AppBarTheme(
-          //       backgroundColor: Colors.blue,
-          //     )),
-          // // 路由
-          debugShowCheckedModeBanner: false,
+        return RefreshConfiguration(
+          headerBuilder: () => const ClassicHeader(), // 自定义刷新头部
+          footerBuilder: () => const ClassicFooter(), // 自定义刷新尾部
+          hideFooterWhenNotFull: true, // 当列表不满一页时,是否隐藏刷新尾部
+          headerTriggerDistance: 80, // 触发刷新的距离
+          maxOverScrollExtent: 100, // 最大的拖动距离
+          footerTriggerDistance: 150, // 触发加载的距离
+          // APP主体
+          child: GetMaterialApp(
+            title: 'Flutter Demo',
+            // theme: ThemeData(
+            //     primarySwatch: Colors.blue,
+            //     appBarTheme: const AppBarTheme(
+            //       backgroundColor: Colors.blue,
+            //     )),
+            // // 路由
+            debugShowCheckedModeBanner: false,
 
-          // 路由
-          initialRoute: RouteNames.systemSplash,
-          getPages: RoutePages.list,
-          navigatorObservers: [RoutePages.observer],
-          // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+            // 路由
+            initialRoute: RouteNames.systemSplash,
+            getPages: RoutePages.list,
+            navigatorObservers: [RoutePages.observer],
+            // home: const MyHomePage(title: 'Flutter Demo Home Page'),
 
-          // 多语言
-          translations: Translation(), // 词典
-          localizationsDelegates: Translation.localizationsDelegates, // 代理
-          supportedLocales: Translation.supportedLocales, // 支持的语言种类
-          locale: ConfigService.to.locale, // 当前语言种类
-          fallbackLocale: Translation.fallbackLocale, // 默认语言种类
+            // 多语言
+            translations: Translation(), // 词典
+            localizationsDelegates: Translation.localizationsDelegates, // 代理
+            supportedLocales: Translation.supportedLocales, // 支持的语言种类
+            locale: ConfigService.to.locale, // 当前语言种类
+            fallbackLocale: Translation.fallbackLocale, // 默认语言种类
 
-          // 样式
-          theme: AppTheme.light,
-          darkTheme: AppTheme.dark,
-          // 主题
-          themeMode:
-              ConfigService.to.isDarkModel ? ThemeMode.dark : ThemeMode.light,
+            // 样式
+            theme: AppTheme.light,
+            darkTheme: AppTheme.dark,
+            // 主题
+            themeMode:
+                ConfigService.to.isDarkModel ? ThemeMode.dark : ThemeMode.light,
 
-          // builder
-          builder: (context, widget) {
-            widget = EasyLoading.init()(context, widget); // EasyLoading 初始化
+            // builder
+            builder: (context, widget) {
+              widget = EasyLoading.init()(context, widget); // EasyLoading 初始化
 
-            // 不随系统字体缩放比例
-            return MediaQuery(
-              data: MediaQuery.of(context)
-                  .copyWith(textScaler: const TextScaler.linear(1.0)),
-              child: widget!,
-            );
-          },
+              // 不随系统字体缩放比例
+              return MediaQuery(
+                data: MediaQuery.of(context)
+                    .copyWith(textScaler: const TextScaler.linear(1.0)),
+                child: widget!,
+              );
+            },
+          ),
         );
       },
     );

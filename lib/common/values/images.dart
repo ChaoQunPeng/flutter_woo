@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-05 10:49:51
+ * @LastEditTime: 2024-06-10 17:29:12
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/images.dart
  * @Description: 
  */
@@ -15,6 +15,7 @@ class AssetsImages {
   static const pPaypalPng = 'assets/images/p-paypal.png';
   static const pVisaPng = 'assets/images/p-visa.png';
   static const profileBackgroundPng = 'assets/images/profile-background.png';
+  static const homePlaceholderPng = 'assets/images/home_placeholder.png';
   static const welcomePng = 'assets/images/welcome.png';
   static const welcome_1Png = 'assets/images/welcome_1.png';
   static const welcome_2Png = 'assets/images/welcome_2.png';

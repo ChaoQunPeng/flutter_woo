@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 11:48:47
+ * @LastEditTime: 2024-06-10 16:44:25
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/view.dart
  * @Description: 
  */
@@ -12,6 +12,7 @@ import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
+import 'widgets/list_title.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
@@ -71,13 +72,30 @@ class HomePage extends GetView<HomeController> {
 
   // 分类导航
   Widget _buildCategories() {
-    return <Widget>[
-      for (var i = 0; i < controller.categoryItems.length; i++)
-        CategoryListItemWidget(
-          category: controller.categoryItems[i],
-          onTap: (categoryId) => controller.onCategoryTap(categoryId),
-        ).paddingRight(AppSpace.listItem)
-    ]
+    getCategoryItemList() {
+      List<Widget> categoryItemList = [];
+
+      // 链式调用，类型写CategoryListItemWidget
+      // for (var i = 0; i < controller.categoryItems.length; i++) {
+      //   categoryItemList.add(CategoryListItemWidget(
+      //     category: controller.categoryItems[i],
+      //     onTap: (categoryId) => controller.onCategoryTap(categoryId),
+      //   )..paddingRight(AppSpace.listItem));
+      // }
+
+      for (var i = 0; i < controller.categoryItems.length; i++) {
+        categoryItemList.add(
+          CategoryListItemWidget(
+            category: controller.categoryItems[i],
+            onTap: (categoryId) => controller.onCategoryTap(categoryId),
+          ).paddingRight(AppSpace.listItem),
+        );
+      }
+
+      return categoryItemList;
+    }
+
+    return <Widget>[...getCategoryItemList()]
         .toListView(
           scrollDirection: Axis.horizontal,
         )
@@ -87,9 +105,26 @@ class HomePage extends GetView<HomeController> {
         .sliverPaddingHorizontal(AppSpace.page);
   }
 
-  // Flash Sell
+  /// 热卖商品
   Widget _buildFlashSell() {
-    return Container()
+    return <Widget>[
+      for (var i = 0; i < controller.flashShellProductList.length; i++)
+        ProductItemWidget(
+          controller.flashShellProductList[i],
+          imgHeight: 117.w,
+          imgWidth: 120.w,
+        )
+            .constrained(
+              width: 130.w,
+              height: 170.w,
+            )
+            .paddingRight(AppSpace.listItem)
+    ]
+        .toListView(
+          scrollDirection: Axis.horizontal,
+        )
+        .height(170.w)
+        .paddingBottom(AppSpace.listRow)
         .sliverToBoxAdapter()
         .sliverPaddingHorizontal(AppSpace.page);
   }
@@ -111,13 +146,15 @@ class HomePage extends GetView<HomeController> {
         // 分类导航
         _buildCategories(),
 
-        // Flash Sell
-        // title
-        Text(LocaleKeys.gHomeFlashSell.tr)
-            .sliverToBoxAdapter()
-            .sliverPaddingHorizontal(AppSpace.page),
+        // 推荐商品 栏位标题
+        controller.flashShellProductList.isNotEmpty
+            ? BuildListTitle(
+                title: LocaleKeys.gHomeFlashSell.tr,
+                subTitle: "03. 30. 30",
+                onTap: () => controller.onAllTap(true),
+              ).sliverToBoxAdapter().sliverPaddingHorizontal(AppSpace.page)
+            : const SliverToBoxAdapter(),
 
-        // list
         _buildFlashSell(),
 
         // new product
@@ -126,7 +163,7 @@ class HomePage extends GetView<HomeController> {
             .sliverToBoxAdapter()
             .sliverPaddingHorizontal(AppSpace.page),
 
-        // list
+        // // list
         _buildNewSell(),
       ],
     );

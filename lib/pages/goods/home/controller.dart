@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 11:52:05
+ * @LastEditTime: 2024-06-10 16:03:18
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/controller.dart
  * @Description: 
  */
@@ -54,6 +54,9 @@ class HomeController extends GetxController {
 
   // 导航点击事件
   void onAppBarTap() {}
+
+  // ALL 点击事件
+  void onAllTap(bool featured) {}
 
   // @override
   // void onInit() {

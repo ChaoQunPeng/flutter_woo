@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 16:21:24
+ * @LastEditTime: 2024-06-11 17:00:28
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/controller.dart
  * @Description: 
  */
@@ -46,6 +46,12 @@ class ProductDetailsController extends GetxController
 
     // 初始化 tab 控制器
     tabController = TabController(length: 3, vsync: this);
+
+    // 监听 tab 切换
+    tabController.addListener(() {
+      tabIndex = tabController.index;
+      update(['product_tab']);
+    });
 
     update(["product_details"]);
   }

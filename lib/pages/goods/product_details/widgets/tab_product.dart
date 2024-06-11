@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:42:51
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 16:21:54
+ * @LastEditTime: 2024-06-11 17:00:08
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/widgets/tab_product.dart
  * @Description: 
  */
@@ -44,8 +44,8 @@ class TabProductView extends GetView<ProductDetailsController> {
           ).paddingBottom(AppSpace.listRow * 2);
         },
       ),
-    
-       // 尺寸
+
+      // 尺寸
       _buildTitle("Size"),
       GetBuilder<ProductDetailsController>(
         id: "product_sizes",
@@ -58,6 +58,21 @@ class TabProductView extends GetView<ProductDetailsController> {
           ).paddingBottom(AppSpace.listRow * 2);
         },
       ),
+
+      // 运费说明
+      _buildTitle("Shipping Charge"),
+      <Widget>[
+        // 运费
+        const TextWidget.body1(
+          "\$12.10",
+          size: 18,
+          weight: FontWeight.bold,
+        ).paddingRight(AppSpace.listItem),
+        // 说明
+        const TextWidget.body2(
+          "by paperfly shipment",
+        ),
+      ].toRow(),
     ]
         .toColumn(
           crossAxisAlignment: CrossAxisAlignment.start,

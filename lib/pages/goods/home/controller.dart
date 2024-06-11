@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 17:44:22
+ * @LastEditTime: 2024-06-11 12:42:11
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/controller.dart
  * @Description: 
  */
@@ -180,7 +180,12 @@ class HomeController extends GetxController {
   void onAppBarTap() {}
 
   // ALL 点击事件
-  void onAllTap(bool featured) {}
+  void onAllTap(bool featured, String title) {
+    Get.toNamed(
+      RouteNames.goodsProductList,
+      arguments: {"featured": featured, "title": title},
+    );
+  }
 
   @override
   void onInit() {

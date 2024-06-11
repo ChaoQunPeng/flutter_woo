@@ -2,13 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 17:35:36
+ * @LastEditTime: 2024-06-11 13:41:14
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_woo_commerce_getx_learn/common/components/refresher.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -175,12 +174,13 @@ class HomePage extends GetView<HomeController> {
               // 分类导航
               _buildCategories(),
 
-              // 推荐商品 栏位标题
+              // 热卖商品
               controller.flashShellProductList.isNotEmpty
                   ? BuildListTitle(
                       title: LocaleKeys.gHomeFlashSell.tr,
                       subTitle: "03. 30. 30",
-                      onTap: () => controller.onAllTap(true),
+                      onTap: () => controller.onAllTap(
+                          true, LocaleKeys.gHomeFlashSell.tr),
                     )
                       .sliverToBoxAdapter()
                       .sliverPaddingHorizontal(AppSpace.page)
@@ -188,11 +188,16 @@ class HomePage extends GetView<HomeController> {
 
               _buildFlashSell(),
 
-              // new product
-              // title
-              Text(LocaleKeys.gHomeNewProduct.tr)
-                  .sliverToBoxAdapter()
-                  .sliverPaddingHorizontal(AppSpace.page),
+              // 推荐商品 栏位标题
+              controller.flashShellProductList.isNotEmpty
+                  ? BuildListTitle(
+                      title: LocaleKeys.gNewsTitle.tr,
+                      onTap: () =>
+                          controller.onAllTap(true, LocaleKeys.gNewsTitle.tr),
+                    )
+                      .sliverToBoxAdapter()
+                      .sliverPaddingHorizontal(AppSpace.page)
+                  : const SliverToBoxAdapter(),
 
               // list
               _buildNewSell(),

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-10 10:28:39
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 10:29:05
+ * @LastEditTime: 2024-06-10 23:46:06
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/api/product.dart
  * @Description: 
  */
@@ -38,4 +38,6 @@ class ProductApi {
     }
     return products;
   }
+
+  
 }

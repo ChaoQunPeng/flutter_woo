@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 15:08:56
+ * @LastEditTime: 2024-06-11 15:23:42
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/view.dart
  * @Description: 
  */
@@ -55,6 +55,7 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
         tag: tag,
         builder: (_) {
           return CarouselWidget(
+            onTap: controller.onGalleryTap,
             // 图片列表
             items: controller.bannerItems,
             // 当前索引

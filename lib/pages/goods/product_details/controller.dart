@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 16:07:56
+ * @LastEditTime: 2024-06-11 16:21:24
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/controller.dart
  * @Description: 
  */
@@ -35,6 +35,11 @@ class ProductDetailsController extends GetxController
   // 选中颜色列表
   List<String> colorKeys = [];
 
+  // 尺寸列表
+  List<KeyValueModel<AttributeModel>> sizes = [];
+  // 选中尺寸列表
+  List<String> sizeKeys = [];
+
   _initData() async {
     await _loadCache();
     await _loadProduct();
@@ -59,6 +64,26 @@ class ProductDetailsController extends GetxController
               ))
           .toList();
     }
+
+    // 选中值
+    if (product?.attributes != null) {
+      // 颜色
+      var colorAttr = product?.attributes?.where((e) => e.name == "Color");
+      if (colorAttr?.isNotEmpty == true) {
+        colorKeys = colorAttr?.first.options ?? [];
+      }
+      // 尺寸
+      var sizeAttr = product?.attributes?.where((e) => e.name == "Size");
+      if (sizeAttr?.isNotEmpty == true) {
+        sizeKeys = sizeAttr?.first.options ?? [];
+      }
+    }
+  }
+
+  // 尺寸选中
+  void onSizeTap(List<String> keys) {
+    sizeKeys = keys;
+    update(["product_sizes"]);
   }
 
   // Banner 切换事件
@@ -90,6 +115,17 @@ class ProductDetailsController extends GetxController
 
     colors = stringColors != ""
         ? jsonDecode(stringColors).map<KeyValueModel<AttributeModel>>((item) {
+            var arrt = AttributeModel.fromJson(item);
+            return KeyValueModel(key: "${arrt.name}", value: arrt);
+          }).toList()
+        : [];
+
+    // 尺寸列表
+    var stringSizes =
+        Storage().getString(Constants.storageProductsAttributesSizes);
+
+    sizes = stringSizes != ""
+        ? jsonDecode(stringSizes).map<KeyValueModel<AttributeModel>>((item) {
             var arrt = AttributeModel.fromJson(item);
             return KeyValueModel(key: "${arrt.name}", value: arrt);
           }).toList()

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 15:54:04
+ * @LastEditTime: 2024-06-11 16:19:57
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/controller.dart
  * @Description: 
  */
@@ -142,11 +142,17 @@ class HomeController extends GetxController {
 
     // 颜色
     var attributeColors = await ProductApi.attributes(1);
-
     // 保存离线数据
     // 基础
     Storage()
         .setJson(Constants.storageProductsAttributesColors, attributeColors);
+
+    // 基础数据
+    // 尺寸
+    var attributeSizes = await ProductApi.attributes(2);
+    // 保存离线数据
+    // 尺寸定义
+    Storage().setJson(Constants.storageProductsAttributesSizes, attributeSizes);
 
     // await Future.delayed(const Duration(seconds: 1));
 

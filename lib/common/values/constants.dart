@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 15:50:39
+ * @LastEditTime: 2024-06-11 16:19:33
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/constants.dart
  * @Description: 
  */
@@ -42,4 +42,7 @@ class Constants {
 
   // 颜色定义
   static const storageProductsAttributesColors = 'products_attributes_colors';
+
+  // 尺寸定义
+  static const storageProductsAttributesSizes = 'products_attributes_sizes';
 }

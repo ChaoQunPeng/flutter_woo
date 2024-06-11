@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:42:51
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 16:01:46
+ * @LastEditTime: 2024-06-11 16:21:54
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/widgets/tab_product.dart
  * @Description: 
  */
@@ -41,6 +41,20 @@ class TabProductView extends GetView<ProductDetailsController> {
             keys: controller.colorKeys,
             size: 33.w,
             onTap: controller.onColorTap,
+          ).paddingBottom(AppSpace.listRow * 2);
+        },
+      ),
+    
+       // 尺寸
+      _buildTitle("Size"),
+      GetBuilder<ProductDetailsController>(
+        id: "product_sizes",
+        tag: uniqueTag,
+        builder: (_) {
+          return TagsListWidget(
+            itemList: controller.sizes,
+            keys: controller.sizeKeys,
+            onTap: controller.onSizeTap,
           ).paddingBottom(AppSpace.listRow * 2);
         },
       ),

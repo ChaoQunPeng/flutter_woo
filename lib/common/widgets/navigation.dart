@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-08 09:43:59
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-08 09:46:37
+ * @LastEditTime: 2024-06-11 17:15:20
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/widgets/navigation.dart
  * @Description: 
  */
@@ -59,7 +59,8 @@ class BuildNavigation extends StatelessWidget {
           ),
         ]
             .toColumn(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center
             )
             .onTap(() => onTap(i))
             .expanded(),

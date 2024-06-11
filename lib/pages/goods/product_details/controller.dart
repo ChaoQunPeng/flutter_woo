@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 18:15:53
+ * @LastEditTime: 2024-06-11 18:47:43
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/controller.dart
  * @Description: 
  */
@@ -54,9 +54,28 @@ class ProductDetailsController extends GetxController
   // 评论 页尺寸
   final int _reviewsLimit = 20;
 
+  // 主界面 刷新控制器
+  final RefreshController mainRefreshController = RefreshController(
+    initialRefresh: true,
+  );
+
+  // main 下拉刷新
+  void onMainRefresh() async {
+    try {
+      // 拉取商品详情
+      await _loadProduct();
+      // 刷新数据
+      mainRefreshController.refreshCompleted();
+    } catch (error) {
+      // 刷新失败
+      mainRefreshController.refreshFailed();
+    }
+    update(["product_details"]);
+  }
+
   _initData() async {
     await _loadCache();
-    await _loadProduct();
+    // await _loadProduct();
     // await _loadReviews(true);
 
     // 初始化 tab 控制器
@@ -267,8 +286,11 @@ class ProductDetailsController extends GetxController
   @override
   void onClose() {
     super.onClose();
+    // 销毁 tab 控制器
     tabController.dispose();
-    // 释放 评论下拉控制器
+    // 销毁 主下拉控制器
+    mainRefreshController.dispose();
+    // 销毁 评论下拉控制器
     reviewsRefreshController.dispose();
   }
 }

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 16:22:06
+ * @LastEditTime: 2024-06-11 18:58:51
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/components/index.dart
  * @Description: 
  */
@@ -21,3 +21,4 @@ export 'refresher.dart';
 export 'gallery.dart';
 export 'colors_list.dart';
 export 'tags_list.dart';
+export 'stars_list.dart';

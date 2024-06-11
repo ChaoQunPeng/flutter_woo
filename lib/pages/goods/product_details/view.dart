@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 15:39:43
+ * @LastEditTime: 2024-06-11 18:53:49
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/view.dart
  * @Description: 
  */
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'index.dart';
 import 'widgets/index.dart';
@@ -164,6 +165,31 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
     );
   }
 
+  // 底部按钮
+  Widget _buildButtons() {
+    return controller.product == null
+        ? const SizedBox.shrink()
+        : <Widget>[
+            // 加入购物车
+            ButtonWidget.secondary(
+              LocaleKeys.gDetailBtnAddCart.tr,
+            ).expanded(),
+
+            // 间距
+            SizedBox(width: AppSpace.iconTextLarge),
+
+            // 立刻购买
+            ButtonWidget.primary(
+              LocaleKeys.gDetailBtnBuy.tr,
+            ).expanded(),
+          ]
+            .toRow(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            )
+            .paddingHorizontal(AppSpace.page);
+  }
+
   // 主视图
   Widget _buildView() {
     return controller.product == null
@@ -198,7 +224,22 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
                   controller.product?.name ?? LocaleKeys.gDetailTitle.tr),
           // 内容
           body: SafeArea(
-            child: _buildView(),
+            child: <Widget>[
+              // 主视图
+              SmartRefresher(
+                controller: controller.mainRefreshController, // 刷新控制器
+                onRefresh: controller.onMainRefresh, // 下拉刷新回调
+                child: _buildView(),
+              ),
+
+              // 底部按钮
+              if (controller.product != null)
+                _buildButtons().positioned(
+                  left: 0,
+                  bottom: 10,
+                  right: 0,
+                ),
+            ].toStack(),
           ),
         );
       },

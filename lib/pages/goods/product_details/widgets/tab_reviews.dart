@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:46:28
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 18:36:30
+ * @LastEditTime: 2024-06-11 19:01:32
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/widgets/tab_reviews.dart
  * @Description: 
  */
@@ -37,6 +37,11 @@ class TabReviewsView extends GetView<ProductDetailsController> {
 
       // 星、名称、评论、图
       <Widget>[
+        // 星
+        StarsListWidget(
+          value: item.rating ?? 0,
+          size: 12,
+        ),
         // 名称
         TextWidget.title3(
           item.reviewer ?? "",

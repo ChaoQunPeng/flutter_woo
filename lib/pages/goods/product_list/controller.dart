@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:09
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 12:47:18
+ * @LastEditTime: 2024-06-11 13:48:37
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_list/controller.dart
  * @Description: 
  */
@@ -35,10 +35,8 @@ class ProductListController extends GetxController {
   final int _limit = 20;
 
   _initData() async {
-    productList =
-        await ProductApi.products(ProductsReq(featured: false, prePage: 20));
-
-    // productList = Get.arguments["productList"];
+    // productList =
+    //     await ProductApi.products(ProductsReq(featured: false, prePage: 5));
 
     pageTitle = Get.arguments["title"];
 

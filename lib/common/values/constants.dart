@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 17:42:34
+ * @LastEditTime: 2024-06-11 13:51:03
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/constants.dart
  * @Description: 
  */
@@ -29,6 +29,10 @@ class Constants {
   // AES
   static const aesKey = 'aH5aH5bG0dC6aA3oN0cK4aU5jU6aK2lN';
   static const aesIV = 'hK6eB4aE1aF3gH5q';
+
+  // 基础数据
+  // 商品分类
+  static const storageProductsCategories = 'home_categories';
 
   // 首页离线
   static const storageHomeBanner = 'home_banner';

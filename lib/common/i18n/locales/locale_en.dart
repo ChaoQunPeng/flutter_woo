@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 23:07:39
+ * @LastEditTime: 2024-06-11 13:50:15
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -91,4 +91,7 @@ Map<String, String> localeEn = {
   // 商品 - 列表
   LocaleKeys.gFlashSellTitle: 'Flash Sell',
   LocaleKeys.gNewsTitle: 'New Product',
+
+  // 商品 - 分类页
+  LocaleKeys.gCategoryTitle: 'All Categories',
 };

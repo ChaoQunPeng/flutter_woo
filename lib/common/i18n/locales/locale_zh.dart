@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 23:08:04
+ * @LastEditTime: 2024-06-11 13:50:21
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -90,4 +90,7 @@ Map<String, String> localeZh = {
   // 商品 - 列表
   LocaleKeys.gFlashSellTitle: '热卖商品列表',
   LocaleKeys.gNewsTitle: '新商品列表',
+
+  // 商品 - 分类
+  LocaleKeys.gCategoryTitle: '所有分类',
 };

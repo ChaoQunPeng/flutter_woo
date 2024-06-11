@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-10 11:44:59
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 11:45:24
+ * @LastEditTime: 2024-06-11 14:06:19
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/components/category_item.dart
  * @Description: 
  */
@@ -47,7 +47,7 @@ class CategoryListItemWidget extends StatelessWidget {
     ]
         .toColumn(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
         )
 
         // padding 垂直间距

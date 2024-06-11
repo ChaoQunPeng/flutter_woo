@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 12:42:11
+ * @LastEditTime: 2024-06-11 13:59:16
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/controller.dart
  * @Description: 
  */
@@ -110,7 +110,14 @@ class HomeController extends GetxController {
   }
 
   // 分类点击事件
-  void onCategoryTap(int categoryId) {}
+  void onCategoryTap(int categoryId) {
+    Get.toNamed(
+      RouteNames.goodsCategory,
+      arguments: {
+        "id": categoryId,
+      },
+    );
+  }
 
   _initData() async {
     // 首页
@@ -123,6 +130,9 @@ class HomeController extends GetxController {
         await ProductApi.products(ProductsReq(featured: true));
     // 新商品
     newProductProductList = await ProductApi.products(ProductsReq());
+
+    // 保存离线数据
+    Storage().setJson(Constants.storageProductsCategories, categoryItems);
 
     // 保存离线数据
     Storage().setJson(Constants.storageHomeBanner, bannerItems);

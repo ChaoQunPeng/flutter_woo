@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 23:07:23
+ * @LastEditTime: 2024-06-11 13:50:08
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -81,8 +81,11 @@ class LocaleKeys {
   static const gHomeFlashSell = 'goods_home_flash_shell';
   static const gHomeNewProduct = 'goods_home_new_product';
   static const gHomeMore = 'goods_home_more';
-  
+
   // 商品 - 列表
   static const gFlashSellTitle = "goods_flash_sell_title";
   static const gNewsTitle = "goods_news_title";
+
+  // 商品 - 分类
+  static const gCategoryTitle = "goods_category_title";
 }

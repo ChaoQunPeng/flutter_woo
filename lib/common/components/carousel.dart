@@ -48,6 +48,7 @@ class CarouselWidget extends StatelessWidget {
   final double? indicatorLeft, indicatorRight, indicatorBottom;
 
   Widget _buildView() {
+
     List<Widget> ws = [
       // 滚动视图
       CarouselSlider(
@@ -71,6 +72,7 @@ class CarouselWidget extends StatelessWidget {
           for (var i = 0; i < items.length; i++)
             ImageWidget.url(
               items[i].value,
+              width: double.infinity,
               fit: BoxFit.fill,
             ).onTap(
               () {

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-10 10:28:39
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 23:46:06
+ * @LastEditTime: 2024-06-11 15:03:01
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/api/product.dart
  * @Description: 
  */
@@ -39,5 +39,11 @@ class ProductApi {
     return products;
   }
 
-  
+  /// 商品详情
+  static Future<ProductModel> productDetail(int? id) async {
+    var res = await WPHttpService.to.get(
+      '/products/$id',
+    );
+    return ProductModel.fromJson(res.data);
+  }
 }

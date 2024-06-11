@@ -2,14 +2,16 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 15:03:31
+ * @LastEditTime: 2024-06-11 15:37:34
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/controller.dart
  * @Description: 
  */
+import 'package:flutter/material.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
-class ProductDetailsController extends GetxController {
+class ProductDetailsController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   ProductDetailsController();
 
   // 商品 id , 获取路由传递参数
@@ -21,8 +23,16 @@ class ProductDetailsController extends GetxController {
   // Banner 当前位置
   int bannerCurrentIndex = 0;
 
+  // tab 控制器
+  late TabController tabController;
+  // tab 控制器
+  int tabIndex = 0;
+
   _initData() async {
     await _loadProduct();
+
+    // 初始化 tab 控制器
+    tabController = TabController(length: 3, vsync: this);
 
     update(["product_details"]);
   }
@@ -57,6 +67,13 @@ class ProductDetailsController extends GetxController {
     ));
   }
 
+  // 切换 tab
+  void onTapBarTap(int index) {
+    tabIndex = index;
+    tabController.animateTo(index);
+    update(["product_tab"]);
+  }
+
   void onTap() {}
 
   // @override
@@ -70,8 +87,9 @@ class ProductDetailsController extends GetxController {
     _initData();
   }
 
-  // @override
-  // void onClose() {
-  //   super.onClose();
-  // }
+  @override
+  void onClose() {
+    super.onClose();
+    tabController.dispose();
+  }
 }

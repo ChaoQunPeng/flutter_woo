@@ -2,10 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 15:37:34
+ * @LastEditTime: 2024-06-11 16:07:56
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/controller.dart
  * @Description: 
  */
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
@@ -28,7 +30,13 @@ class ProductDetailsController extends GetxController
   // tab 控制器
   int tabIndex = 0;
 
+  // 颜色列表
+  List<KeyValueModel<AttributeModel>> colors = [];
+  // 选中颜色列表
+  List<String> colorKeys = [];
+
   _initData() async {
+    await _loadCache();
     await _loadProduct();
 
     // 初始化 tab 控制器
@@ -72,6 +80,27 @@ class ProductDetailsController extends GetxController
     tabIndex = index;
     tabController.animateTo(index);
     update(["product_tab"]);
+  }
+
+  // 读取缓存
+  _loadCache() async {
+    // 颜色列表
+    var stringColors =
+        Storage().getString(Constants.storageProductsAttributesColors);
+
+    colors = stringColors != ""
+        ? jsonDecode(stringColors).map<KeyValueModel<AttributeModel>>((item) {
+            var arrt = AttributeModel.fromJson(item);
+            return KeyValueModel(key: "${arrt.name}", value: arrt);
+          }).toList()
+        : [];
+  }
+
+  // 颜色选中
+  void onColorTap(List<String> keys) {
+    print(keys);
+    colorKeys = keys;
+    update(["product_colors"]);
   }
 
   void onTap() {}

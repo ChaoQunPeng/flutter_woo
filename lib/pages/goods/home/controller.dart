@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 13:59:16
+ * @LastEditTime: 2024-06-11 15:54:04
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/controller.dart
  * @Description: 
  */
@@ -140,7 +140,15 @@ class HomeController extends GetxController {
     Storage().setJson(Constants.storageHomeFlashSell, flashShellProductList);
     Storage().setJson(Constants.storageHomeNewSell, newProductProductList);
 
-    await Future.delayed(const Duration(seconds: 1));
+    // 颜色
+    var attributeColors = await ProductApi.attributes(1);
+
+    // 保存离线数据
+    // 基础
+    Storage()
+        .setJson(Constants.storageProductsAttributesColors, attributeColors);
+
+    // await Future.delayed(const Duration(seconds: 1));
 
     update(["home"]);
   }

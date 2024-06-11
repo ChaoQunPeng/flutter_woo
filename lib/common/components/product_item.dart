@@ -54,7 +54,7 @@ class ProductItemWidget extends StatelessWidget {
             product.price ?? "",
             weight: FontWeight.bold,
           )
-        else 
+        else
           TextWidget.body2(
             "暂无价格",
             color: AppColors.onPrimary,

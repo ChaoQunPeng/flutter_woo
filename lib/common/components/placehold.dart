@@ -9,7 +9,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 
-
 /// 占位图组件
 class PlaceholdWidget extends StatelessWidget {
   // 资源图片地址

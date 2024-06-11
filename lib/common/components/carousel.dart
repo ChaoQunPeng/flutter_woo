@@ -48,7 +48,6 @@ class CarouselWidget extends StatelessWidget {
   final double? indicatorLeft, indicatorRight, indicatorBottom;
 
   Widget _buildView() {
-
     List<Widget> ws = [
       // 滚动视图
       CarouselSlider(

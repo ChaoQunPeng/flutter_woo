@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 13:51:03
+ * @LastEditTime: 2024-06-11 15:50:39
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/values/constants.dart
  * @Description: 
  */
@@ -39,4 +39,7 @@ class Constants {
   static const storageHomeCategories = 'home_categories';
   static const storageHomeFlashSell = 'home_flash_sell';
   static const storageHomeNewSell = 'home_new_sell';
+
+  // 颜色定义
+  static const storageProductsAttributesColors = 'products_attributes_colors';
 }

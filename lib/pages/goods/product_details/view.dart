@@ -119,8 +119,7 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
       textColor: controller.tabIndex == index
           ? AppColors.onPrimary
           : AppColors.secondary,
-      bgColor:
-          controller.tabIndex == index ? AppColors.primary : Colors.grey,
+      bgColor: controller.tabIndex == index ? AppColors.primary : Colors.grey,
     ).tight(
       width: 100.w,
       height: 35.h,

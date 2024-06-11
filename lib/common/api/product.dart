@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-10 10:28:39
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 15:03:01
+ * @LastEditTime: 2024-06-11 15:52:41
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/api/product.dart
  * @Description: 
  */
@@ -45,5 +45,21 @@ class ProductApi {
       '/products/$id',
     );
     return ProductModel.fromJson(res.data);
+  }
+
+  /// 属性列表
+  /// id 1 颜色 2 尺寸
+  static Future<List<AttributeModel>> attributes(int id) async {
+    var res = await WPHttpService.to.get(
+      '/products/attributes/$id/terms',
+    );
+
+    List<AttributeModel> attributes = [];
+    for (var item in res.data) {
+      attributes.add(AttributeModel.fromJson(item));
+    }
+    // 排序 menuOrder , 小号在前
+    attributes.sort((a, b) => a.menuOrder!.compareTo(b.menuOrder as int));
+    return attributes;
   }
 }

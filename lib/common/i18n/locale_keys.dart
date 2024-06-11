@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 13:50:08
+ * @LastEditTime: 2024-06-11 14:23:42
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -88,4 +88,12 @@ class LocaleKeys {
 
   // 商品 - 分类
   static const gCategoryTitle = "goods_category_title";
+
+  // 商品 - 详情
+  static const gDetailTitle = "goods_detail_title";
+  static const gDetailTabProduct = "goods_detail_tab_product";
+  static const gDetailTabDetails = "goods_detail_tab_details";
+  static const gDetailTabReviews = "goods_detail_tab_reviews";
+  static const gDetailBtnAddCart = "goods_detail_btn_add_cart";
+  static const gDetailBtnBuy = "goods_detail_btn_buy";
 }

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 13:50:21
+ * @LastEditTime: 2024-06-11 14:23:58
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -93,4 +93,12 @@ Map<String, String> localeZh = {
 
   // 商品 - 分类
   LocaleKeys.gCategoryTitle: '所有分类',
+
+  // 商品 - 详情
+  LocaleKeys.gDetailTitle: '商品信息',
+  LocaleKeys.gDetailTabProduct: '规格',
+  LocaleKeys.gDetailTabDetails: '说明',
+  LocaleKeys.gDetailTabReviews: '评论',
+  LocaleKeys.gDetailBtnAddCart: '加入购物车',
+  LocaleKeys.gDetailBtnBuy: '立刻购买',
 };

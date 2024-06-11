@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 13:50:15
+ * @LastEditTime: 2024-06-11 14:23:50
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -94,4 +94,12 @@ Map<String, String> localeEn = {
 
   // 商品 - 分类页
   LocaleKeys.gCategoryTitle: 'All Categories',
+
+  // 商品 - 详情
+  LocaleKeys.gDetailTitle: 'Product Info',
+  LocaleKeys.gDetailTabProduct: 'Product',
+  LocaleKeys.gDetailTabDetails: 'Details',
+  LocaleKeys.gDetailTabReviews: 'Reviews',
+  LocaleKeys.gDetailBtnAddCart: 'Add To Cart',
+  LocaleKeys.gDetailBtnBuy: 'Buy Now',
 };

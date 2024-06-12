@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:45
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 16:40:45
+ * @LastEditTime: 2024-06-12 16:49:39
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/controller.dart
  * @Description: 
  */
@@ -53,6 +53,18 @@ class SearchFilterController extends GetxController {
     update(["filter_stars"]);
   }
 
+  // Brand
+  List<KeyValueModel<AttributeModel>> brands = [];
+  List<String> brandKeys = [];
+
+  // Gender
+  List<KeyValueModel<AttributeModel>> genders = [];
+  List<String> genderKeys = [];
+
+  // Condition
+  List<KeyValueModel<AttributeModel>> conditions = [];
+  List<String> conditionKeys = [];
+
   // 读取缓存
   void _loadCache() async {
     // 尺寸列表
@@ -74,6 +86,55 @@ class SearchFilterController extends GetxController {
         return KeyValueModel(key: "${arrt.name}", value: arrt);
       }).toList();
     }
+
+    // 品牌列表
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesBrand);
+      brands = jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+
+    // 性别列表
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesGender);
+      genders = jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+
+    // 新旧列表
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesCondition);
+      conditions =
+          jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+  }
+
+  // 品牌选中
+  void onBrandTap(List<String> keys) {
+    brandKeys = keys;
+    update(["filter_brands"]);
+  }
+
+  // 性别选中
+  void onGenderTap(List<String> keys) {
+    genderKeys = keys;
+    update(["filter_genders"]);
+  }
+
+  // 新旧选中
+  void onConditionTap(List<String> keys) {
+    conditionKeys = keys;
+    update(["filter_conditions"]);
   }
 
   // 颜色选中

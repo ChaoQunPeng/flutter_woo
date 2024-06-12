@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-12 15:51:15
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 16:40:37
+ * @LastEditTime: 2024-06-12 16:50:25
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/widgets/filter_view.dart
  * @Description: 
  */
@@ -109,6 +109,69 @@ class FilterView extends GetView<SearchFilterController> {
     );
   }
 
+  // 品牌选择
+  Widget _buildBrands() {
+    return GetBuilder<SearchFilterController>(
+      id: "filter_brands",
+      builder: (_) {
+        return TagsListWidget(
+          onTap: controller.onBrandTap,
+          itemList: controller.brands,
+          keys: controller.brandKeys,
+          bgSelectedColor: AppColors.highlight,
+          textSelectedColor: AppColors.onPrimary,
+          borderRadius: 11,
+          height: 17,
+          width: 55,
+          textSize: 9,
+          textWeight: FontWeight.w400,
+        ).paddingBottom(AppSpace.listRow * 2);
+      },
+    );
+  }
+
+  // 性别选择
+  Widget _buildGenders() {
+    return GetBuilder<SearchFilterController>(
+      id: "filter_genders",
+      builder: (_) {
+        return TagsListWidget(
+          onTap: controller.onGenderTap,
+          itemList: controller.genders,
+          keys: controller.genderKeys,
+          bgSelectedColor: AppColors.highlight,
+          textSelectedColor: AppColors.onPrimary,
+          borderRadius: 11,
+          height: 17,
+          width: 55,
+          textSize: 9,
+          textWeight: FontWeight.w400,
+        ).paddingBottom(AppSpace.listRow * 2);
+      },
+    );
+  }
+
+  // 新旧选择
+  Widget _buildConditions() {
+    return GetBuilder<SearchFilterController>(
+      id: "filter_conditions",
+      builder: (_) {
+        return TagsListWidget(
+          onTap: controller.onConditionTap,
+          itemList: controller.conditions,
+          keys: controller.conditionKeys,
+          bgSelectedColor: AppColors.highlight,
+          textSelectedColor: AppColors.onPrimary,
+          borderRadius: 11,
+          height: 17,
+          width: 55,
+          textSize: 9,
+          textWeight: FontWeight.w400,
+        ).paddingBottom(AppSpace.listRow * 2);
+      },
+    );
+  }
+
   Widget _buildView() {
     return <Widget>[
       // 顶部
@@ -129,6 +192,18 @@ class FilterView extends GetView<SearchFilterController> {
       // 评价
       _buildTitle(LocaleKeys.searchFilterReview.tr),
       _buildStars(),
+
+      // 品牌
+      _buildTitle(LocaleKeys.searchFilterBrand.tr),
+      _buildBrands(),
+
+      // 性别
+      _buildTitle(LocaleKeys.searchFilterGender.tr),
+      _buildGenders(),
+
+      // 新旧
+      _buildTitle(LocaleKeys.searchFilterCondition.tr),
+      _buildConditions(),
     ]
         .toColumn(
           crossAxisAlignment: CrossAxisAlignment.start,

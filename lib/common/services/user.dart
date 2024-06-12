@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-07 23:46:31
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-08 00:02:42
+ * @LastEditTime: 2024-06-12 17:35:47
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/services/user.dart
  * @Description: 
  */
@@ -64,9 +64,8 @@ class UserService extends GetxService {
     Storage().setString(Constants.storageProfile, jsonEncode(profile));
   }
 
-  /// 注销
+   /// 注销
   Future<void> logout() async {
-    // if (_isLogin.value) await UserAPIs.logout();
     await Storage().remove(Constants.storageToken);
     _profile(UserProfileModel());
     _isLogin.value = false;

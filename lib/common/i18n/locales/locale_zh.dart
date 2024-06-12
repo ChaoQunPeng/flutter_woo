@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 15:11:21
+ * @LastEditTime: 2024-06-12 17:05:27
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -113,4 +113,21 @@ Map<String, String> localeZh = {
   LocaleKeys.searchFilterBrand: '品牌',
   LocaleKeys.searchFilterGender: '性别',
   LocaleKeys.searchFilterCondition: '状况',
+
+  // 我的
+  LocaleKeys.myTabWishlist: '喜欢',
+  LocaleKeys.myTabFollowing: '关注',
+  LocaleKeys.myTabVoucher: '收据',
+  LocaleKeys.myBtnMyOrder: '我的订单',
+  LocaleKeys.myBtnMyWallet: '我的钱包',
+  LocaleKeys.myBtnEditProfile: '编辑个人资料',
+  LocaleKeys.myBtnAddress: '送货地址',
+  LocaleKeys.myBtnNotification: '消息',
+  LocaleKeys.myBtnLanguage: '语言',
+  LocaleKeys.myBtnTheme: '主题',
+  LocaleKeys.myBtnWinGift: '赢取礼物',
+  LocaleKeys.myBtnStyles: '样式组件',
+  LocaleKeys.myBtnLogout: '注销',
+  LocaleKeys.myBtnBillingAddress: '发票地址',
+  LocaleKeys.myBtnShippingAddress: '配送地址',
 };

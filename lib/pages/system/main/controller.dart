@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 17:52:02
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-08 13:01:38
+ * @LastEditTime: 2024-06-12 17:05:55
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/system/main/controller.dart
  * @Description: 
  */
@@ -27,7 +27,11 @@ class MainController extends GetxController {
 
   // 切换页面
   void onJumpToPage(int page) {
-    pageController.jumpToPage(page);
+    if ((page != 0) && !UserService.to.isLogin) {
+      Get.toNamed(RouteNames.systemLogin);
+    } else {
+      pageController.jumpToPage(page);
+    }
   }
 
   _initData() async {

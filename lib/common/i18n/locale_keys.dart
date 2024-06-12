@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 15:10:07
+ * @LastEditTime: 2024-06-12 17:05:01
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -108,4 +108,20 @@ class LocaleKeys {
   static const searchFilterBrand = "search_filter_brand";
   static const searchFilterGender = "search_filter_gender";
   static const searchFilterCondition = "search_filter_condition";
+
+  static const myTabWishlist = "my_tab_wishlist";
+  static const myTabFollowing = "my_tab_following";
+  static const myTabVoucher = "my_tab_voucher";
+  static const myBtnMyOrder = "my_btn_my_order";
+  static const myBtnMyWallet = "my_btn_my_wallet";
+  static const myBtnEditProfile = "my_btn_edit_profile";
+  static const myBtnAddress = "my_btn_address";
+  static const myBtnNotification = "my_btn_notification";
+  static const myBtnLanguage = "my_btn_language";
+  static const myBtnTheme = "my_btn_theme";
+  static const myBtnWinGift = "my_btn_win_gift";
+  static const myBtnStyles = "my_btn_styles";
+  static const myBtnLogout = "my_btn_logout";
+  static const myBtnBillingAddress = "my_btn_billing_address";
+  static const myBtnShippingAddress = "my_btn_shipping_address";
 }

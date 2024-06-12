@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 15:11:09
+ * @LastEditTime: 2024-06-12 17:05:19
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -114,4 +114,21 @@ Map<String, String> localeEn = {
   LocaleKeys.searchFilterBrand: 'Brand',
   LocaleKeys.searchFilterGender: 'Gender',
   LocaleKeys.searchFilterCondition: 'Condition',
+
+  // 我的
+  LocaleKeys.myTabWishlist: 'Wishlist',
+  LocaleKeys.myTabFollowing: 'Following',
+  LocaleKeys.myTabVoucher: 'Voucher',
+  LocaleKeys.myBtnMyOrder: 'My Order',
+  LocaleKeys.myBtnMyWallet: 'My Wallet',
+  LocaleKeys.myBtnEditProfile: 'Edit Profile',
+  LocaleKeys.myBtnAddress: 'Address',
+  LocaleKeys.myBtnNotification: 'Notification',
+  LocaleKeys.myBtnLanguage: 'Language',
+  LocaleKeys.myBtnTheme: 'Theme',
+  LocaleKeys.myBtnWinGift: 'Win Gift',
+  LocaleKeys.myBtnLogout: 'Logout',
+  LocaleKeys.myBtnStyles: 'Styles',
+  LocaleKeys.myBtnBillingAddress: 'Billing address',
+  LocaleKeys.myBtnShippingAddress: 'Shipping address',
 };

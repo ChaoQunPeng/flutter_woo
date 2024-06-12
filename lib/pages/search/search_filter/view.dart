@@ -2,11 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:45
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 15:17:09
+ * @LastEditTime: 2024-06-12 15:36:24
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
@@ -15,9 +16,46 @@ import 'index.dart';
 class SearchFilterPage extends GetView<SearchFilterController> {
   const SearchFilterPage({Key? key}) : super(key: key);
 
-  // 搜索过滤栏
+// 搜索过滤栏
   Widget _buildFilterBar() {
-    return Text("搜索过滤栏");
+    return <Widget>[
+      // 排序 Best Match
+      DropdownWidget(
+        items: controller.orderList,
+        hintText: controller.orderSelected.value,
+        onChanged: controller.onOrderTap,
+      )
+          .decorated(
+            border: Border.all(
+              color: Colors.grey,
+              width: 1,
+            ),
+          )
+          .height(40.h)
+          .expanded(),
+
+      // 筛选 Filter
+      ButtonWidget.dropdown(
+        LocaleKeys.searchFilter.tr,
+        IconWidget.icon(
+          Icons.expand_more,
+          color: AppColors.primary,
+        ),
+        // onTap: controller.onFilterOpenTap,
+        textSize: 15,
+        textColor: AppColors.secondary,
+        textWeight: FontWeight.w400,
+        borderColor: AppColors.surfaceVariant,
+        height: 40.h,
+      )
+          .decorated(
+            border: Border.all(
+              color: Colors.grey,
+              width: 1,
+            ),
+          )
+          .expanded(),
+    ].toRow();
   }
 
   // 数据列表

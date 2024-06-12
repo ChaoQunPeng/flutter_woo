@@ -2,14 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:16:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 16:19:57
+ * @LastEditTime: 2024-06-12 14:40:02
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/home/controller.dart
  * @Description: 
  */
 import 'dart:convert';
-import 'dart:developer';
 
-import 'package:flutter_woo_commerce_getx_learn/common/api/product.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -201,7 +199,9 @@ class HomeController extends GetxController {
   void onTap() {}
 
   // 导航点击事件
-  void onAppBarTap() {}
+  void onAppBarTap() {
+    Get.toNamed(RouteNames.searchSearchIndex);
+  }
 
   // ALL 点击事件
   void onAllTap(bool featured, String title) {

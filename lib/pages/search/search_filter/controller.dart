@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:45
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 16:34:28
+ * @LastEditTime: 2024-06-12 16:40:45
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/controller.dart
  * @Description: 
  */
@@ -43,6 +43,15 @@ class SearchFilterController extends GetxController {
   List<KeyValueModel<AttributeModel>> colors = [];
   // 选中颜色列表
   List<String> colorKeys = [];
+
+  // 星级
+  int starValue = -1;
+
+  // 星级选中
+  void onStarTap(int value) {
+    starValue = value;
+    update(["filter_stars"]);
+  }
 
   // 读取缓存
   void _loadCache() async {

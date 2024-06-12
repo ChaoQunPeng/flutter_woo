@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-12 15:51:15
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 16:34:47
+ * @LastEditTime: 2024-06-12 16:40:37
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/widgets/filter_view.dart
  * @Description: 
  */
@@ -94,6 +94,21 @@ class FilterView extends GetView<SearchFilterController> {
     );
   }
 
+  // 评级选择
+  Widget _buildStars() {
+    return GetBuilder<SearchFilterController>(
+      id: "filter_stars",
+      builder: (_) {
+        return StarsListWidget(
+          value: controller.starValue,
+          onTap: controller.onStarTap,
+          selectedColor: AppColors.highlight,
+          size: 18,
+        ).paddingBottom(AppSpace.listRow * 2);
+      },
+    );
+  }
+
   Widget _buildView() {
     return <Widget>[
       // 顶部
@@ -110,6 +125,10 @@ class FilterView extends GetView<SearchFilterController> {
       // 颜色
       _buildTitle(LocaleKeys.searchFilterColor.tr),
       _buildColors(),
+
+      // 评价
+      _buildTitle(LocaleKeys.searchFilterReview.tr),
+      _buildStars(),
     ]
         .toColumn(
           crossAxisAlignment: CrossAxisAlignment.start,

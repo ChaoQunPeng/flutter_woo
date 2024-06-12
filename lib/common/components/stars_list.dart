@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 18:56:05
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 18:56:14
+ * @LastEditTime: 2024-06-12 16:37:56
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/components/stars_list.dart
  * @Description: 
  */
@@ -51,7 +51,7 @@ class StarsListWidget extends StatelessWidget {
     this.runSpacing = 5,
     this.starNum = 5,
     this.value = 0,
-  })  : color = color ?? AppColors.surfaceVariant,
+  })  : color = color ?? AppColors.onBackground,
         selectedColor = selectedColor ?? AppColors.primary,
         super(key: key);
 

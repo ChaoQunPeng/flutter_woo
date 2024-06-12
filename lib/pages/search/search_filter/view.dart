@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:45
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 15:36:24
+ * @LastEditTime: 2024-06-12 16:01:30
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/view.dart
  * @Description: 
  */
@@ -12,6 +12,7 @@ import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
+import 'widgets/filter_view.dart';
 
 class SearchFilterPage extends GetView<SearchFilterController> {
   const SearchFilterPage({Key? key}) : super(key: key);
@@ -41,20 +42,13 @@ class SearchFilterPage extends GetView<SearchFilterController> {
           Icons.expand_more,
           color: AppColors.primary,
         ),
-        // onTap: controller.onFilterOpenTap,
+        onTap: controller.onFilterOpenTap,
         textSize: 15,
         textColor: AppColors.secondary,
         textWeight: FontWeight.w400,
         borderColor: AppColors.surfaceVariant,
         height: 40.h,
-      )
-          .decorated(
-            border: Border.all(
-              color: Colors.grey,
-              width: 1,
-            ),
-          )
-          .expanded(),
+      ).expanded(),
     ].toRow();
   }
 
@@ -80,6 +74,8 @@ class SearchFilterPage extends GetView<SearchFilterController> {
       id: "search_filter",
       builder: (_) {
         return Scaffold(
+          // key
+          key: controller.scaffoldKey,
           // 导航
           appBar: mainAppBarWidget(
             titleSpace: 20,
@@ -99,6 +95,11 @@ class SearchFilterPage extends GetView<SearchFilterController> {
 
           // 内容
           body: _buildView(),
+
+          // 右侧弹出 Drawer
+          endDrawer: const Drawer(
+            child: SafeArea(child: FilterView()),
+          ),
         );
       },
     );

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:45
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 16:27:12
+ * @LastEditTime: 2024-06-12 16:34:28
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/controller.dart
  * @Description: 
  */
@@ -36,9 +36,13 @@ class SearchFilterController extends GetxController {
 
   // 尺寸列表
   List<KeyValueModel<AttributeModel>> sizes = [];
-
   // 选中尺寸列表
   List<String> sizeKeys = [];
+
+  // 颜色列表
+  List<KeyValueModel<AttributeModel>> colors = [];
+  // 选中颜色列表
+  List<String> colorKeys = [];
 
   // 读取缓存
   void _loadCache() async {
@@ -51,6 +55,22 @@ class SearchFilterController extends GetxController {
         return KeyValueModel(key: "${arrt.name}", value: arrt);
       }).toList();
     }
+
+    // 颜色列表
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesColors);
+      colors = jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+  }
+
+  // 颜色选中
+  void onColorTap(List<String> keys) {
+    colorKeys = keys;
+    update(["filter_colors"]);
   }
 
   // 价格区间拖动

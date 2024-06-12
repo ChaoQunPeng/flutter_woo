@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:46:28
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 19:01:32
+ * @LastEditTime: 2024-06-12 18:39:09
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/widgets/tab_reviews.dart
  * @Description: 
  */
@@ -30,7 +30,7 @@ class TabReviewsView extends GetView<ProductDetailsController> {
       const ImageWidget.url(
         // item.reviewerAvatarUrls?["96"],
         // 测试需要改成自定义头像
-        "https://ducafecat.oss-cn-beijing.aliyuncs.com/avatar/00258VC3ly1gty0r05zh2j60ut0u0tce02.jpg",
+        "https://i0.hdslb.com/bfs/face/ba49a43eae4793c261e1744a1ba1f8a1f3bc3047.jpg@120w_120h_1c.avif",
         width: 55,
         height: 55,
       ).paddingRight(AppSpace.listItem),

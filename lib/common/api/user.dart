@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-06 13:59:50
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-07 23:44:16
+ * @LastEditTime: 2024-06-12 18:09:31
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/api/user.dart
  * @Description: 
  */
@@ -36,6 +36,28 @@ class UserApi {
   static Future<UserProfileModel> profile() async {
     var res = await WPHttpService.to.get(
       '/users/me',
+    );
+    return UserProfileModel.fromJson(res.data);
+  }
+
+  /// 保存用户 billing address
+  static Future<UserProfileModel> saveBillingAddress(Billing? req) async {
+    var res = await WPHttpService.to.put(
+      '/users/me',
+      data: {
+        "billing": req,
+      },
+    );
+    return UserProfileModel.fromJson(res.data);
+  }
+
+  /// 保存用户 shipping address
+  static Future<UserProfileModel> saveShippingAddress(Shipping? req) async {
+    var res = await WPHttpService.to.put(
+      '/users/me',
+      data: {
+        "shipping": req,
+      },
     );
     return UserProfileModel.fromJson(res.data);
   }

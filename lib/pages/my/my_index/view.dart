@@ -64,7 +64,7 @@ class MyIndexPage extends GetView<MyIndexController> {
               // 头像
               ImageWidget.url(
                 // 测试需要改成自定义头像
-                "https://ducafecat.oss-cn-beijing.aliyuncs.com/avatar/00258VC3ly1gty0r05zh2j60ut0u0tce02.jpg",
+                "https://i0.hdslb.com/bfs/face/ba49a43eae4793c261e1744a1ba1f8a1f3bc3047.jpg@120w_120h_1c.avif",
                 width: 100.w,
                 height: 100.w,
                 fit: BoxFit.fill,
@@ -124,19 +124,12 @@ class MyIndexPage extends GetView<MyIndexController> {
   // 按钮列表
   Widget _buildButtonsList() {
     return <Widget>[
-      // Edit Profile
-      ButtonItemWidget(
-        title: LocaleKeys.myBtnEditProfile.tr,
-        svgPath: AssetsSvgs.pCurrencySvg,
-        color: "4971FF".toColor,
-        onTap: () => Get.toNamed(RouteNames.myProfileEdit),
-      ),
-
       // Billing Address
       ButtonItemWidget(
         title: LocaleKeys.myBtnBillingAddress.tr,
         svgPath: AssetsSvgs.pHomeSvg,
         color: "F43284".toColor,
+        onTap: () => controller.onToAddress("Billing"), // 类型 billing
       ),
 
       // Billing Address
@@ -144,6 +137,7 @@ class MyIndexPage extends GetView<MyIndexController> {
         title: LocaleKeys.myBtnShippingAddress.tr,
         svgPath: AssetsSvgs.pHomeSvg,
         color: "5F84FF".toColor,
+        onTap: () => controller.onToAddress("Shipping"), // 类型 shipping
       ),
 
       // Language

@@ -64,7 +64,7 @@ class UserService extends GetxService {
     Storage().setString(Constants.storageProfile, jsonEncode(profile));
   }
 
-   /// 注销
+  /// 注销
   Future<void> logout() async {
     await Storage().remove(Constants.storageToken);
     _profile(UserProfileModel());

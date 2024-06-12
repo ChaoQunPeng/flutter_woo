@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 17:05:19
+ * @LastEditTime: 2024-06-12 18:05:27
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -131,4 +131,18 @@ Map<String, String> localeEn = {
   LocaleKeys.myBtnStyles: 'Styles',
   LocaleKeys.myBtnBillingAddress: 'Billing address',
   LocaleKeys.myBtnShippingAddress: 'Shipping address',
+
+  // 订单配送地址
+  LocaleKeys.addressViewTitle: '@type address',
+  LocaleKeys.addressFirstName: 'First name',
+  LocaleKeys.addressLastName: 'Last name',
+  LocaleKeys.addressCountry: 'Country',
+  LocaleKeys.addressState: 'State',
+  LocaleKeys.addressPostCode: 'Post code',
+  LocaleKeys.addressCity: 'City',
+  LocaleKeys.addressAddress1: 'Address 1',
+  LocaleKeys.addressAddress2: 'Address 2',
+  LocaleKeys.addressCompany: 'Company',
+  LocaleKeys.addressPhoneNumber: 'Phone number',
+  LocaleKeys.addressEmail: 'Email',
 };

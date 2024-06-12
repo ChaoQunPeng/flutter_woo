@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 18:56:05
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 16:37:56
+ * @LastEditTime: 2024-06-12 18:08:44
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/components/stars_list.dart
  * @Description: 
  */

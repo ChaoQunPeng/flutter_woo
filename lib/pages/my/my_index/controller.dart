@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:03
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 17:36:07
+ * @LastEditTime: 2024-06-12 18:12:55
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/my_index/controller.dart
  * @Description: 
  */
@@ -19,6 +19,11 @@ class MyIndexController extends GetxController {
   }
 
   void onTap() {}
+
+  // 地址编辑页 type 1 billing 2 shipping
+  void onToAddress(String type) {
+    Get.toNamed(RouteNames.myMyAddress, arguments: {"type": type});
+  }
 
   // 注销
   void onLogout() {

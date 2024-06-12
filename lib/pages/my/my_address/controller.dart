@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:41
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 22:19:46
+ * @LastEditTime: 2024-06-12 23:07:50
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/my_address/controller.dart
  * @Description: 
  */
@@ -39,6 +39,30 @@ class MyAddressController extends GetxController {
   List<Map<KeyValueModel, List<KeyValueModel>>> countriesList = [];
   // 国家选择
   List<int> countrySels = [];
+
+  // 洲省数据
+  List<KeyValueModel> statesList = [];
+  // 洲省市选择
+  List<int> statesSels = [];
+
+  // 取洲省数据
+  void _filterStates(String countryCode) {
+    for (var i = 0; i < continents.length; i++) {
+      var continent = continents[i];
+      var country =
+          continent.countries!.firstWhereOrNull((el) => el.code == countryCode);
+      if (country != null) {
+        statesList = List.generate(country.states?.length ?? 0, (index) {
+          var state = country.states?.elementAt(index);
+          return KeyValueModel<String>(
+            key: state?.code ?? "-",
+            value: state?.name ?? "-",
+          );
+        });
+        break;
+      }
+    }
+  }
 
   // 拉取大陆国家洲省数据
   Future<void> _fetchContinents() async {
@@ -111,6 +135,13 @@ class MyAddressController extends GetxController {
       statesController.text = profile.shipping?.state ?? "";
     }
 
+    // 洲省代码
+    String statesCode = statesController.text;
+    // 洲选择器数据
+    _filterStates(countryCode);
+    // 洲省选择器 - 选中 index
+    statesSels = [statesList.indexWhere((el) => el.key == statesCode)];
+
     update(["my_address"]);
   }
 
@@ -130,7 +161,27 @@ class MyAddressController extends GetxController {
         if (value.isEmpty) return;
         if (value.length == 2) {
           countryController.text = '${value[1].key}';
+          _filterStates(value[1].key); // 刷新洲数据
         }
+      },
+    );
+  }
+
+  // 洲省市选择
+  void onStatesPicker() async {
+    ActionBottomSheet.data(
+      title: 'States',
+      context: Get.context!,
+      // 数据
+      adapter: PickerDataAdapter<KeyValueModel>(
+        pickerData: statesList,
+      ),
+      // 默认选中 [index]
+      selecteds: statesSels,
+      // 确认回调
+      onConfirm: (value) {
+        if (value.isEmpty) return;
+        statesController.text = '${value[0].key}';
       },
     );
   }

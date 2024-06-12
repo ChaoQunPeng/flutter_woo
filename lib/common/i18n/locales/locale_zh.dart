@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 14:23:58
+ * @LastEditTime: 2024-06-12 15:11:21
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -101,4 +101,16 @@ Map<String, String> localeZh = {
   LocaleKeys.gDetailTabReviews: '评论',
   LocaleKeys.gDetailBtnAddCart: '加入购物车',
   LocaleKeys.gDetailBtnBuy: '立刻购买',
+
+  // 搜索
+  LocaleKeys.searchPlaceholder: '搜索商品',
+  LocaleKeys.searchOrder: '最佳匹配',
+  LocaleKeys.searchFilter: '筛选',
+  LocaleKeys.searchFilterPrice: '价格',
+  LocaleKeys.searchFilterSize: '尺寸',
+  LocaleKeys.searchFilterColor: '颜色',
+  LocaleKeys.searchFilterReview: '星级',
+  LocaleKeys.searchFilterBrand: '品牌',
+  LocaleKeys.searchFilterGender: '性别',
+  LocaleKeys.searchFilterCondition: '状况',
 };

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:40
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 15:03:53
+ * @LastEditTime: 2024-06-12 15:14:33
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_index/controller.dart
  * @Description: 
  */
@@ -78,7 +78,15 @@ class SearchIndexController extends GetxController {
   }
 
   // 列表项点击事件
-  void onListItemTap(TagsModel model) {}
+  void onListItemTap(TagsModel model) {
+    // 跳转到商品详情页
+    Get.toNamed(
+      RouteNames.searchSearchFilter,
+      arguments: {
+        "tagId": model.id,
+      },
+    );
+  }
 
   // @override
   // void onInit() {

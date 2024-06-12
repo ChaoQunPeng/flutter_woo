@@ -131,6 +131,10 @@ class MyIndexPage extends GetView<MyIndexController> {
         // 按钮列表
         _buildButtonsList().sliverBox,
 
+        const SizedBox(
+          height: 500,
+        ).sliverBox,
+
         // 注销
         ButtonWidget.primary(
           LocaleKeys.myBtnLogout.tr,

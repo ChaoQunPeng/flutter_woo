@@ -2,11 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:41
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 18:11:34
+ * @LastEditTime: 2024-06-12 22:19:46
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/my_address/controller.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
+import 'package:flutter_picker_plus/picker.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
@@ -32,8 +33,58 @@ class MyAddressController extends GetxController {
   TextEditingController countryController = TextEditingController();
   TextEditingController statesController = TextEditingController();
 
+  // 大陆国家洲省
+  List<ContinentsModel> continents = [];
+  // 大陆国家数据
+  List<Map<KeyValueModel, List<KeyValueModel>>> countriesList = [];
+  // 国家选择
+  List<int> countrySels = [];
+
+  // 拉取大陆国家洲省数据
+  Future<void> _fetchContinents() async {
+    continents = await UserApi.continents();
+    countriesList = List.generate(continents.length, (index) {
+      var entity = continents[index];
+      List<KeyValueModel> countryList = [];
+      for (Country country in entity.countries ?? []) {
+        countryList.add(KeyValueModel<String>(
+          key: country.code ?? "-",
+          value: country.name ?? "-",
+        ));
+      }
+      return {
+        KeyValueModel<String>(
+          key: entity.code ?? "-",
+          value: entity.name ?? "-",
+        ): countryList,
+      };
+    });
+  }
+
   // 初始化
   Future<void> _initData() async {
+    // 拉取 大陆国家数据
+    await _fetchContinents();
+
+    // 国家代码
+    String countryCode = countryController.text;
+
+    // 国家选着器 - 选中 index
+    for (var i = 0; i < continents.length; i++) {
+      // 大陆
+      var continent = continents[i];
+      // 检查是否有选中的国家
+      int iCountryIndex =
+          continent.countries?.indexWhere((el) => el.code == countryCode) ?? 0;
+      if (iCountryIndex > 0) {
+        countrySels = [
+          i,
+          iCountryIndex,
+        ];
+        break;
+      }
+    }
+
     // 用户数据初始
     UserProfileModel profile = UserService.to.profile;
     if (type == "Billing") {
@@ -61,6 +112,27 @@ class MyAddressController extends GetxController {
     }
 
     update(["my_address"]);
+  }
+
+  // 国家选择
+  void onCountryPicker() async {
+    ActionBottomSheet.data(
+      title: 'Country',
+      context: Get.context!,
+      // 数据
+      adapter: PickerDataAdapter<KeyValueModel<String>>(
+        pickerData: countriesList,
+      ),
+      // 默认选中 [index, index]
+      selecteds: countrySels,
+      // 确认回调
+      onConfirm: (value) {
+        if (value.isEmpty) return;
+        if (value.length == 2) {
+          countryController.text = '${value[1].key}';
+        }
+      },
+    );
   }
 
   // 保存

@@ -48,8 +48,28 @@ class MyAddressPage extends GetView<MyAddressController> {
           ),
 
           // Country
+          TextFormWidget(
+            onTap: controller.onCountryPicker,
+            readOnly: true,
+            isMustBeEnter: true,
+            controller: controller.countryController,
+            labelText: LocaleKeys.addressCountry.tr,
+            validator: Validatorless.multiple([
+              Validatorless.required("The field is obligatory"),
+            ]),
+          ),
 
           // State
+          // TextFormWidget(
+          //   onTap: controller.onStatesPicker,
+          //   readOnly: true,
+          //   isMustBeEnter: true,
+          //   controller: controller.statesController,
+          //   labelText: LocaleKeys.addressState.tr,
+          //   validator: Validatorless.multiple([
+          //     Validatorless.required("The field is obligatory"),
+          //   ]),
+          // ),
 
           // Post Code
           TextFormWidget(
@@ -131,12 +151,7 @@ class MyAddressPage extends GetView<MyAddressController> {
             ),
 
           // end
-        ]
-            .map<Widget>(
-              (e) => e.paddingBottom(30),
-            )
-            .toList()
-            .toColumn());
+        ].toColumn());
   }
 
 // 主视图

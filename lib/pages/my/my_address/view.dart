@@ -131,7 +131,12 @@ class MyAddressPage extends GetView<MyAddressController> {
             ),
 
           // end
-        ].toColumn());
+        ]
+            .map<Widget>(
+              (e) => e.paddingBottom(30),
+            )
+            .toList()
+            .toColumn());
   }
 
 // 主视图

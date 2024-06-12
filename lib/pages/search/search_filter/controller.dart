@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:45
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 15:50:21
+ * @LastEditTime: 2024-06-12 16:20:48
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/controller.dart
  * @Description: 
  */
@@ -28,6 +28,20 @@ class SearchFilterController extends GetxController {
       KeyValueModel(key: "rating", value: "Best Match");
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  // 价格范围 0~1000
+  final List<double> priceRange = [100, 1000];
+
+  // 价格区间拖动
+  onPriceRangeDragging(
+    int handlerIndex,
+    dynamic lowerValue,
+    dynamic upperValue,
+  ) {
+    priceRange[0] = lowerValue as double;
+    priceRange[1] = upperValue as double;
+    update(["filter_price_range"]);
+  }
 
   // 筛选 打开
   void onFilterOpenTap() {

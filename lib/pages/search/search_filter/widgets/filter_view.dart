@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-12 15:51:15
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 16:50:25
+ * @LastEditTime: 2024-06-12 16:56:09
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_filter/widgets/filter_view.dart
  * @Description: 
  */
@@ -204,6 +204,16 @@ class FilterView extends GetView<SearchFilterController> {
       // 新旧
       _buildTitle(LocaleKeys.searchFilterCondition.tr),
       _buildConditions(),
+
+      // 应用按钮
+      const Divider(),
+      ButtonWidget.primary(
+        LocaleKeys.commonBottomApply.tr,
+        onTap: controller.onFilterApplyTap,
+      ).tight(
+        width: 75,
+        height: 25,
+      ),
     ]
         .toColumn(
           crossAxisAlignment: CrossAxisAlignment.start,

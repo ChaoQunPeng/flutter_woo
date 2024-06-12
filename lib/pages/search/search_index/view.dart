@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:17:40
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 14:35:16
+ * @LastEditTime: 2024-06-12 15:00:06
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/search/search_index/view.dart
  * @Description: 
  */
@@ -30,11 +30,35 @@ class SearchIndexPage extends GetView<SearchIndexController> {
     );
   }
 
+  // 列表项
+  Widget _buildListItem(TagsModel item) {
+    return ListTile(
+      title: TextWidget.body1(item.name ?? ""),
+      trailing: IconWidget.icon(
+        Icons.north_west,
+        color: AppColors.primary,
+      ),
+      onTap: () => controller.onListItemTap(item),
+    );
+  }
+
+  // 列表
+  Widget _buildList() {
+    return ListView.separated(
+      itemBuilder: (BuildContext context, int index) {
+        TagsModel item = controller.tagsList[index];
+        return _buildListItem(item);
+      },
+      separatorBuilder: (BuildContext context, int index) {
+        return const Divider();
+      },
+      itemCount: controller.tagsList.length,
+    );
+  }
+
   // 主视图
   Widget _buildView() {
-    return const Center(
-      child: Text("SearchIndexPage"),
-    );
+    return _buildList();
   }
 
   @override

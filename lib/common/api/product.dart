@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-10 10:28:39
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 18:11:31
+ * @LastEditTime: 2024-06-12 14:53:07
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/api/product.dart
  * @Description: 
  */
@@ -109,6 +109,20 @@ class ProductApi {
       reviews.add(ReviewModel.fromJson(item));
     }
     return reviews;
+  }
+
+  /// tags 列表
+  static Future<List<TagsModel>> tags(TagsReq? req) async {
+    var res = await WPHttpService.to.get(
+      '/products/tags',
+      params: req?.toJson(),
+    );
+
+    List<TagsModel> tags = [];
+    for (var item in res.data) {
+      tags.add(TagsModel.fromJson(item));
+    }
+    return tags;
   }
 }
 

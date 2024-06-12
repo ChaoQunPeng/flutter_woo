@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-10 10:23:38
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-10 10:23:54
+ * @LastEditTime: 2024-06-12 14:52:51
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/models/request/product.dart
  * @Description: 
  */
@@ -87,5 +87,27 @@ class ProductsReq {
         'max_price': maxPrice ?? "",
         'orderby': orderby ?? "date",
         'order': order ?? "desc",
+      };
+}
+
+/// tags查询请求
+class TagsReq {
+  final int? page;
+  final int? prePage;
+  final String? search;
+  final String? slug;
+
+  TagsReq({
+    this.page,
+    this.prePage,
+    this.search,
+    this.slug,
+  });
+
+  Map<String, dynamic> toJson() => {
+        'page': page ?? 1,
+        'pre_page': prePage ?? 10,
+        'search': search ?? "",
+        'slug': slug ?? "",
       };
 }

@@ -88,7 +88,7 @@ class ActionBottomSheet {
       // 上下文 context
       context: context,
       // 背景透明
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       // 启用拖拽
       enableDrag: enableDrag,
       // 内容
@@ -124,7 +124,7 @@ class ActionBottomSheet {
       // 上下文 context
       context: context ?? Get.context!,
       // 背景透明
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       // 启用拖拽
       enableDrag: enableDrag,
       // expand
@@ -157,7 +157,7 @@ class ActionBottomSheet {
   }) async {
     return await showMaterialModalBottomSheet(
       context: context ?? Get.context!,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       builder: (context) => SafeArea(
         minimum: safeAreaMinimum ?? EdgeInsets.zero,
         child: child,

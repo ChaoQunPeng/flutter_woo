@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 10:03:22
+ * @LastEditTime: 2024-06-13 11:36:26
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/controller.dart
  * @Description: 
  */
@@ -10,6 +10,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
+import 'package:flutter_woo_commerce_getx_learn/pages/index.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -110,6 +111,25 @@ class ProductDetailsController extends GetxController
     ));
     // 返回、或者去购物车
     Get.back();
+  }
+
+  // 立刻购买 checkout
+  void onCheckoutTap() async {
+    // 检查是否登录
+    if (!await UserService.to.checkIsLogin()) {
+      return;
+    }
+
+    // 检查空
+    if (product == null || product?.id == null) {
+      Loading.error("product is empty");
+      return;
+    }
+
+    // 立刻购买 checkout
+    ActionBottomSheet.barModel(
+      BuyNowPage(product: product!),
+    );
   }
 
   // 拉取商品详情

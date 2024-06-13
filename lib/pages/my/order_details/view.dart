@@ -2,11 +2,12 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:33
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 15:32:34
+ * @LastEditTime: 2024-06-13 15:40:11
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/order_details/view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
@@ -135,7 +136,7 @@ class OrderDetailsPage extends GetView<OrderDetailsController> {
 
       // 间距
       SizedBox(
-        width: AppSpace.iconTextMedium,
+        width: 50.w,
       ),
 
       // Bill To

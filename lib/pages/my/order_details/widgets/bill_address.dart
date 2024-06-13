@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-13 15:32:08
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 15:32:16
+ * @LastEditTime: 2024-06-13 15:34:06
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/order_details/widgets/bill_address.dart
  * @Description: 
  */
@@ -26,7 +26,7 @@ class BuildBillAddress extends StatelessWidget {
   Widget _buildView() {
     return <Widget>[
       // title
-      TextWidget.title3(title ?? "").paddingBottom(AppSpace.listItem),
+      TextWidget.title3(title ?? "", size: 15).paddingBottom(AppSpace.listItem),
 
       // address
       IconTextWidget(

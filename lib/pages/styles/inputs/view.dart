@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:13:50
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-04 14:14:06
+ * @LastEditTime: 2024-06-13 10:41:06
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/styles/inputs/view.dart
  * @Description: 
  */
@@ -24,6 +24,33 @@ class InputsPage extends GetView<InputsController> {
 
   Widget _buildInputs() {
     return <Widget>[
+      /// 选择框
+      CheckBoxWidget(
+        value: controller.checkVal,
+        onChanged: controller.onCheckBox,
+      ).width(300).paddingBottom(AppSpace.listRow),
+
+      /// 选择框 all
+      CheckBoxWidget.all(
+        controller.checkVal,
+        controller.onCheckBox,
+        label: const TextWidget.title3("全选"),
+      ).width(300).paddingBottom(AppSpace.listRow),
+
+      /// 选择框 single
+      CheckBoxWidget.single(
+        controller.checkVal,
+        controller.onCheckBox,
+        label: const TextWidget.title3("行选择"),
+      ).width(300).paddingBottom(AppSpace.listRow),
+
+      /// 选择框 radio
+      CheckBoxWidget.radio(
+        controller.checkVal,
+        controller.onCheckBox,
+        label: const TextWidget.body1("radio"),
+      ).width(300).paddingBottom(AppSpace.listRow),
+
       /// 文本
       const InputWidget.text(
         hintText: "文本",

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-13 10:23:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 10:24:01
+ * @LastEditTime: 2024-06-13 10:48:55
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/cart_index/widgets/cart_item.dart
  * @Description: 
  */
@@ -14,9 +14,13 @@ import 'package:get/get.dart';
 import '../index.dart';
 
 /// 购物车列表项
+/// 购物车列表项
 class CartItem extends StatelessWidget {
   /// 订单数据
   final LineItem lineItem;
+
+  /// 是否全选
+  final bool isSelected;
 
   /// 修改数量事件
   final Function(int)? onChangeQuantity;
@@ -27,6 +31,7 @@ class CartItem extends StatelessWidget {
   const CartItem({
     Key? key,
     required this.lineItem,
+    required this.isSelected,
     this.onChangeQuantity,
     this.onSelect,
   }) : super(key: key);
@@ -37,6 +42,16 @@ class CartItem extends StatelessWidget {
     ProductModel product = lineItem.product!;
 
     return <Widget>[
+      // 单选框
+      CheckBoxWidget.all(
+        isSelected,
+        onSelect,
+        fontColor: AppColors.primary,
+        bgColorChecked: AppColors.primaryContainer,
+        size: 20.sp,
+      ).paddingRight(AppSpace.iconTextSmail),
+
+      
       // 图片
       ImageWidget.url(
         Convert.aliImageResize(

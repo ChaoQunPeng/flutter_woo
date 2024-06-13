@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:09
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 10:25:28
+ * @LastEditTime: 2024-06-13 10:50:03
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/cart_index/view.dart
  * @Description: 
  */
@@ -12,6 +12,7 @@ import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
+import 'widgets/action_bar.dart';
 import 'widgets/cart_item.dart';
 
 class CartIndexPage extends GetView<CartIndexController> {
@@ -22,9 +23,13 @@ class CartIndexPage extends GetView<CartIndexController> {
     return ListView.separated(
       itemBuilder: (BuildContext context, int index) {
         LineItem item = CartService.to.lineItems[index];
-        // 购物车项
         return CartItem(
           lineItem: item,
+          // 是否选中
+          isSelected: controller.isSelected(item.productId!),
+          // 选中回调
+          onSelect: (isSelected) =>
+              controller.onSelect(item.productId!, isSelected),
         ).paddingAll(AppSpace.card).card();
       },
       separatorBuilder: (BuildContext context, int index) {
@@ -98,10 +103,14 @@ class CartIndexPage extends GetView<CartIndexController> {
         .height(60.w);
   }
 
-  // 主视图
   Widget _buildView() {
     return <Widget>[
       // 顶部操作栏
+      ActionBar(
+        onAll: controller.onSelectAll,
+        onRemove: controller.onOrderCancel,
+        isAll: controller.isSelectedAll,
+      ).paddingAll(AppSpace.page),
 
       // 订单列表
       _buildOrders().paddingHorizontal(AppSpace.page).expanded(),

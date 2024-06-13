@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:33
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 15:01:01
+ * @LastEditTime: 2024-06-13 15:17:46
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/order_details/view.dart
  * @Description: 
  */
@@ -35,7 +35,36 @@ class OrderDetailsPage extends GetView<OrderDetailsController> {
 
   // 横向状态
   Widget _buildHorizontalStatus() {
-    return const Text("横向状态");
+    return <Widget>[
+      const StepHorizontalItemWidget(
+        statusName: "Pending",
+        status: StepStatus.success,
+      ),
+      const StepHorizontalItemWidget(
+        statusName: "Confirmed",
+        status: StepStatus.success,
+      ),
+      const StepHorizontalItemWidget(
+        statusName: "Processing",
+        status: StepStatus.running,
+      ),
+      const StepHorizontalItemWidget(
+        statusName: "Picked",
+        status: StepStatus.none,
+      ),
+      const StepHorizontalItemWidget(
+        statusName: "Shipped",
+        status: StepStatus.none,
+      ),
+      const StepHorizontalItemWidget(
+        statusName: "Delivered",
+        status: StepStatus.none,
+      ),
+    ].toRow().padding(
+          bottom: AppSpace.listRow,
+          left: AppSpace.page,
+          right: AppSpace.page,
+        );
   }
 
   // 纵向状态

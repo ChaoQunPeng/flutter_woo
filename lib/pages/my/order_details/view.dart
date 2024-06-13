@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:33
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 15:17:46
+ * @LastEditTime: 2024-06-13 15:25:09
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/order_details/view.dart
  * @Description: 
  */
@@ -69,7 +69,54 @@ class OrderDetailsPage extends GetView<OrderDetailsController> {
 
   // 纵向状态
   Widget _buildVerticalStatus() {
-    return const Text("纵向状态");
+    return <Widget>[
+      const StepVerticalItemWidget(
+        statusName: "Delivered",
+        statusDateTime: "20 Jan, 2019",
+        statusDes:
+            "Lorem Ipsum is simply dumy text of printing and typesetting industry.",
+        status: StepStatus.none,
+      ),
+      const StepVerticalItemWidget(
+        statusName: "Shipped",
+        statusDateTime: "20 Jan, 2019",
+        statusDes:
+            "Lorem Ipsum is simply dumy text of printing and typesetting industry.",
+        status: StepStatus.none,
+      ),
+      const StepVerticalItemWidget(
+        statusName: "Picked",
+        statusDateTime: "20 Jan, 2019",
+        statusDes:
+            "Lorem Ipsum is simply dumy text of printing and typesetting industry.",
+        status: StepStatus.running,
+      ),
+      const StepVerticalItemWidget(
+        statusName: "Processing",
+        statusDateTime: "20 Jan, 2019",
+        statusDes:
+            "Lorem Ipsum is simply dumy text of printing and typesetting industry.",
+        status: StepStatus.success,
+      ),
+      const StepVerticalItemWidget(
+        statusName: "Confirm",
+        statusDateTime: "20 Jan, 2019",
+        statusDes:
+            "Lorem Ipsum is simply dumy text of printing and typesetting industry.",
+        status: StepStatus.success,
+      ),
+      const StepVerticalItemWidget(
+        statusName: "Pending",
+        statusDateTime: "20 Jan, 2019",
+        statusDes:
+            "Lorem Ipsum is simply dumy text of printing and typesetting industry.",
+        status: StepStatus.success,
+      ),
+    ].toColumn().padding(
+          bottom: AppSpace.listRow,
+          left: AppSpace.page,
+          right: AppSpace.page,
+        );
   }
 
   // 寄件地、目的地

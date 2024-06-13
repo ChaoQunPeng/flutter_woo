@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:33:01
+ * @LastEditTime: 2024-06-13 12:39:53
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -172,4 +172,10 @@ Map<String, String> localeEn = {
   LocaleKeys.orderConfirmationTitle: 'Order Placed',
   LocaleKeys.orderConfirmationDesc: 'Your order was placed Successfully',
   LocaleKeys.orderConfirmationBtnHome: 'Go Home',
+
+  // 优惠码
+  LocaleKeys.promoCode: 'Apply Promo Code',
+  LocaleKeys.promoDesc:
+      'Promo Code is simply dummy text the printing and typesetting industry',
+  LocaleKeys.promoEnterCodeTip: 'Enter code here',
 };

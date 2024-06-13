@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:32:51
+ * @LastEditTime: 2024-06-13 12:39:41
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -166,4 +166,9 @@ class LocaleKeys {
   static const orderConfirmationTitle = "order_confirmation_title";
   static const orderConfirmationDesc = "order_confirmation_desc";
   static const orderConfirmationBtnHome = "order_confirmation_btn_home";
+
+  // 优惠码
+  static const promoCode = "promo_code";
+  static const promoDesc = "promo_desc";
+  static const promoEnterCodeTip = "promo_enter_code_tip";
 }

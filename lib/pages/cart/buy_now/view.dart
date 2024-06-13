@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:16
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 12:36:57
+ * @LastEditTime: 2024-06-13 12:45:38
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/buy_now/view.dart
  * @Description: 
  */
@@ -128,6 +128,7 @@ class BuyNowPage extends GetView<BuyNowController> {
           LocaleKeys.placeOrderPriceVoucherCodeEnter.tr,
           textSize: 9,
           textColor: AppColors.highlight,
+          onTap: controller.onEnterCouponCode, // 输入优惠券码
         ),
       ),
 

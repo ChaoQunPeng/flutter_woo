@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:33:07
+ * @LastEditTime: 2024-06-13 12:40:02
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -171,4 +171,9 @@ Map<String, String> localeZh = {
   LocaleKeys.orderConfirmationTitle: '已下订单',
   LocaleKeys.orderConfirmationDesc: '您的订单已成功下达',
   LocaleKeys.orderConfirmationBtnHome: '返回首页',
+
+  // 优惠码
+  LocaleKeys.promoCode: '使用优惠码',
+  LocaleKeys.promoDesc: '促销代码只是印刷和排版行业的虚拟文本',
+  LocaleKeys.promoEnterCodeTip: '输入代码',
 };

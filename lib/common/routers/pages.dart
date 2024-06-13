@@ -27,10 +27,10 @@ class RoutePages {
       name: "/splash",
       page: () => const SplashPage(),
     ),
-    GetPage(
-      name: RouteNames.cartApplyPromoCode,
-      page: () => const ApplyPromoCodePage(),
-    ),
+    // GetPage(
+    //   name: RouteNames.cartApplyPromoCode,
+    //   page: () => const ApplyPromoCodePage(),
+    // ),
     GetPage(
       name: RouteNames.cartBuyDone,
       page: () => const BuyDonePage(),

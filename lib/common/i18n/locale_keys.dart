@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 18:05:17
+ * @LastEditTime: 2024-06-13 10:07:20
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -138,4 +138,13 @@ class LocaleKeys {
   static const addressCompany = "address_company";
   static const addressPhoneNumber = "address_phone_number";
   static const addressEmail = "address_email";
+
+  // 购物车
+  static const gCartTitle = "goods_cart_title";
+  static const gCartBtnSelectAll = "goods_cart_btn_select_all";
+  static const gCartBtnApplyCode = "goods_cart_btn_apply_code";
+  static const gCartBtnCheckout = "goods_cart_btn_checkout";
+  static const gCartTextShippingCost = "goods_cart_text_shipping_cost";
+  static const gCartTextVocher = "goods_cart_text_vocher";
+  static const gCartTextTotal = "goods_cart_text_total";
 }

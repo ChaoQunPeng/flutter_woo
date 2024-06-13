@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 18:05:27
+ * @LastEditTime: 2024-06-13 10:07:41
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -145,4 +145,13 @@ Map<String, String> localeEn = {
   LocaleKeys.addressCompany: 'Company',
   LocaleKeys.addressPhoneNumber: 'Phone number',
   LocaleKeys.addressEmail: 'Email',
+
+  // 购物车
+  LocaleKeys.gCartTitle: 'My Cart',
+  LocaleKeys.gCartBtnSelectAll: 'Select All',
+  LocaleKeys.gCartBtnApplyCode: 'Apply Code',
+  LocaleKeys.gCartBtnCheckout: 'Checkout',
+  LocaleKeys.gCartTextShippingCost: 'Shipping cost',
+  LocaleKeys.gCartTextVocher: 'Voucher',
+  LocaleKeys.gCartTextTotal: 'Total',
 };

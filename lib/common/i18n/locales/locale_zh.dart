@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 18:05:35
+ * @LastEditTime: 2024-06-13 10:07:50
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -144,4 +144,13 @@ Map<String, String> localeZh = {
   LocaleKeys.addressCompany: '国家',
   LocaleKeys.addressPhoneNumber: '电话号码',
   LocaleKeys.addressEmail: '电子邮件',
+
+  // 购物车
+  LocaleKeys.gCartTitle: '我的购物车',
+  LocaleKeys.gCartBtnSelectAll: '全选',
+  LocaleKeys.gCartBtnApplyCode: '使用优惠码',
+  LocaleKeys.gCartBtnCheckout: '支付',
+  LocaleKeys.gCartTextShippingCost: '配送费',
+  LocaleKeys.gCartTextVocher: '代金券',
+  LocaleKeys.gCartTextTotal: '合计',
 };

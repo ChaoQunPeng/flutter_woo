@@ -124,6 +124,14 @@ class MyIndexPage extends GetView<MyIndexController> {
   // 按钮列表
   Widget _buildButtonsList() {
     return <Widget>[
+      // Edit Profile
+      ButtonItemWidget(
+        title: LocaleKeys.myBtnEditProfile.tr,
+        svgPath: AssetsSvgs.pCurrencySvg,
+        color: "4971FF".toColor,
+        onTap: () => Get.toNamed(RouteNames.myProfileEdit),
+      ),
+
       // Billing Address
       ButtonItemWidget(
         title: LocaleKeys.myBtnBillingAddress.tr,

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:33
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 15:58:28
+ * @LastEditTime: 2024-06-13 17:39:00
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/order_details/view.dart
  * @Description: 
  */
@@ -24,7 +24,8 @@ class OrderDetailsPage extends GetView<OrderDetailsController> {
     return <Widget>[
       // Order ID
       TextWidget.title3(
-              "${LocaleKeys.orderDetailsOrderID.tr} : ${controller.order.id}")
+              "${LocaleKeys.orderDetailsOrderID.tr} : ${controller.order.id}",
+              size: 20)
           .expanded(),
 
       // 15 Jan 2019

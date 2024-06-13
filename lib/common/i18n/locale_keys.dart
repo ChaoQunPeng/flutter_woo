@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:40:52
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 14:44:55
+ * @LastEditTime: 2024-06-13 17:40:18
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locale_keys.dart
  * @Description: 
  */
@@ -187,4 +187,19 @@ class LocaleKeys {
   static const orderDetailsTotal = "order_details_total";
   static const orderDetailsShipping = "order_details_shipping";
   static const orderDetailsDiscount = "order_details_discount";
+
+  // 拍照、相册
+  static const pickerTakeCamera = 'picker_take_camera';
+  static const pickerSelectAlbum = 'picker_select_album';
+
+  // 个人信息修改
+  static const profileEditTitle = "profile_edit_title";
+  static const profileEditMyPhoto = "profile_edit_my_photo";
+  static const profileEditFirstName = "profile_edit_first_name";
+  static const profileEditLastName = "profile_edit_last_name";
+  static const profileEditEmail = "profile_edit_email";
+  static const profileEditOldPassword = "profile_edit_old_password";
+  static const profileEditNewPassword = "profile_edit_new_password";
+  static const profileEditConfirmPassword = "profile_edit_confirm_password";
+  static const profileEditPasswordTip = "profile_edit_password_tip";
 }

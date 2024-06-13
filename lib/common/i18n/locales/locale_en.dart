@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 14:45:06
+ * @LastEditTime: 2024-06-13 17:40:38
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -194,4 +194,19 @@ Map<String, String> localeEn = {
   LocaleKeys.orderDetailsPaid: 'Paid',
   LocaleKeys.orderDetailsShipping: 'Shipping',
   LocaleKeys.orderDetailsDiscount: 'Discount',
+
+  // 拍照、相册
+  LocaleKeys.pickerTakeCamera: 'Take camera',
+  LocaleKeys.pickerSelectAlbum: 'Select from album',
+
+  // 个人信息修改
+  LocaleKeys.profileEditTitle: 'Edit Profile',
+  LocaleKeys.profileEditMyPhoto: 'My photo',
+  LocaleKeys.profileEditFirstName: 'First name',
+  LocaleKeys.profileEditLastName: 'Last name',
+  LocaleKeys.profileEditEmail: 'Email',
+  LocaleKeys.profileEditOldPassword: 'Old password',
+  LocaleKeys.profileEditNewPassword: 'New password',
+  LocaleKeys.profileEditConfirmPassword: 'Confirm password',
+  LocaleKeys.profileEditPasswordTip: 'No input means no modification',
 };

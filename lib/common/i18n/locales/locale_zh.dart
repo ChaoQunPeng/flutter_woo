@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 14:45:14
+ * @LastEditTime: 2024-06-13 17:40:53
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -192,4 +192,19 @@ Map<String, String> localeZh = {
   LocaleKeys.orderDetailsPaid: '支付',
   LocaleKeys.orderDetailsShipping: '运费',
   LocaleKeys.orderDetailsDiscount: '折扣',
+
+  // 拍照、相册
+  LocaleKeys.pickerTakeCamera: '拍照',
+  LocaleKeys.pickerSelectAlbum: '从相册中选取',
+
+	// 个人信息修改
+  LocaleKeys.profileEditTitle: '修改信息',
+  LocaleKeys.profileEditMyPhoto: '头像',
+  LocaleKeys.profileEditFirstName: '姓',
+  LocaleKeys.profileEditLastName: '名',
+  LocaleKeys.profileEditEmail: '邮件',
+  LocaleKeys.profileEditOldPassword: '旧密码',
+  LocaleKeys.profileEditNewPassword: '新密码',
+  LocaleKeys.profileEditConfirmPassword: '确认密码',
+  LocaleKeys.profileEditPasswordTip: '不输入表示不修改',
 };

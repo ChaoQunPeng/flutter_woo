@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:44:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 12:40:02
+ * @LastEditTime: 2024-06-13 14:45:14
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_zh.dart
  * @Description: 
  */
@@ -176,4 +176,20 @@ Map<String, String> localeZh = {
   LocaleKeys.promoCode: '使用优惠码',
   LocaleKeys.promoDesc: '促销代码只是印刷和排版行业的虚拟文本',
   LocaleKeys.promoEnterCodeTip: '输入代码',
+
+  // 订单页
+  LocaleKeys.orderListTitle: '订单列表',
+  LocaleKeys.orderDetailsTitle: '订单详情',
+  LocaleKeys.orderDetailsOrderID: '订单 ID',
+  LocaleKeys.orderDetailsBillFrom: '始发地',
+  LocaleKeys.orderDetailsBillTo: '目的地',
+  LocaleKeys.orderDetailsProduct: '商品',
+  LocaleKeys.orderDetailsRateQty: '单价 & 数量',
+  LocaleKeys.orderDetailsAmount: '小计',
+  LocaleKeys.orderDetailsPaymentMethod: '支付方式',
+  LocaleKeys.orderDetailsBalance: '结算',
+  LocaleKeys.orderDetailsTotal: '合计',
+  LocaleKeys.orderDetailsPaid: '支付',
+  LocaleKeys.orderDetailsShipping: '运费',
+  LocaleKeys.orderDetailsDiscount: '折扣',
 };

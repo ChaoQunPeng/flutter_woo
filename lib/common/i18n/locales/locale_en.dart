@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-02 10:42:19
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 12:39:53
+ * @LastEditTime: 2024-06-13 14:45:06
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/i18n/locales/locale_en.dart
  * @Description: 
  */
@@ -178,4 +178,20 @@ Map<String, String> localeEn = {
   LocaleKeys.promoDesc:
       'Promo Code is simply dummy text the printing and typesetting industry',
   LocaleKeys.promoEnterCodeTip: 'Enter code here',
+
+  // 订单页
+  LocaleKeys.orderListTitle: 'Order List',
+  LocaleKeys.orderDetailsTitle: 'Order Detail',
+  LocaleKeys.orderDetailsOrderID: 'Order ID',
+  LocaleKeys.orderDetailsBillFrom: 'Bill From',
+  LocaleKeys.orderDetailsBillTo: 'Bill To',
+  LocaleKeys.orderDetailsProduct: 'Product',
+  LocaleKeys.orderDetailsRateQty: 'Rate & Qty',
+  LocaleKeys.orderDetailsAmount: 'Amount',
+  LocaleKeys.orderDetailsPaymentMethod: 'Payment Method',
+  LocaleKeys.orderDetailsBalance: 'Balance',
+  LocaleKeys.orderDetailsTotal: 'Total',
+  LocaleKeys.orderDetailsPaid: 'Paid',
+  LocaleKeys.orderDetailsShipping: 'Shipping',
+  LocaleKeys.orderDetailsDiscount: 'Discount',
 };

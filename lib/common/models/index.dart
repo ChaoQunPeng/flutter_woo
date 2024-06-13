@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:12:31
+ * @LastEditTime: 2024-06-13 14:47:39
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/models/index.dart
  * @Description: 
  */
@@ -12,6 +12,7 @@ export 'request/error_message_model.dart';
 export 'request/user_register_req.dart';
 export 'request/user_login_req.dart';
 export 'request/product.dart';
+export 'request/order.dart';
 
 export 'user_token_model.dart';
 export 'welcome_model.dart';

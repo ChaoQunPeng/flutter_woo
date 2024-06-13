@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:09
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 10:09:15
+ * @LastEditTime: 2024-06-13 10:25:28
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/cart_index/view.dart
  * @Description: 
  */
@@ -12,6 +12,7 @@ import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
+import 'widgets/cart_item.dart';
 
 class CartIndexPage extends GetView<CartIndexController> {
   const CartIndexPage({Key? key}) : super(key: key);
@@ -21,7 +22,10 @@ class CartIndexPage extends GetView<CartIndexController> {
     return ListView.separated(
       itemBuilder: (BuildContext context, int index) {
         LineItem item = CartService.to.lineItems[index];
-        return Text(item.product?.name ?? "").paddingAll(AppSpace.card).card();
+        // 购物车项
+        return CartItem(
+          lineItem: item,
+        ).paddingAll(AppSpace.card).card();
       },
       separatorBuilder: (BuildContext context, int index) {
         return SizedBox(height: AppSpace.listRow);

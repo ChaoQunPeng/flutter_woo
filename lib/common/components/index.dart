@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:27:17
+ * @LastEditTime: 2024-06-13 13:10:39
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/components/index.dart
  * @Description: 
  */
@@ -25,3 +25,4 @@ export 'stars_list.dart';
 export 'dropdown.dart';
 export 'price_range.dart';
 export 'quantity.dart';
+export 'order.dart';

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:16
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 12:44:01
+ * @LastEditTime: 2024-06-13 13:11:54
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/buy_now/controller.dart
  * @Description: 
  */
@@ -95,7 +95,30 @@ class BuyNowController extends GetxController {
   }
 
   // 下单 checkout
-  void onCheckout() async {}
+  void onCheckout() async {
+    // 商品 LineItem
+    List<LineItem> lineItems = [
+      LineItem(
+        productId: product.id,
+        quantity: quantity,
+      ),
+    ];
+
+    // 提交订单
+    OrderModel res = await OrderApi.crateOrder(
+      lineItem: lineItems,
+      lineCoupons: lineCoupons,
+    );
+
+    // 交易成功
+    if (res.id != null) {
+      // 提示
+      Loading.success("Order created.");
+
+      // goto 成功界面
+      Get.offNamed(RouteNames.cartBuyDone, arguments: res);
+    }
+  }
 
   _initData() {
     shippingAddress = UserService.to.shipping;

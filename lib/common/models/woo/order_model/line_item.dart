@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-12 18:08:24
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 09:46:06
+ * @LastEditTime: 2024-06-13 13:12:38
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/models/woo/order_model/line_item.dart
  * @Description: 
  */
@@ -47,7 +47,7 @@ class LineItem {
   });
 
   factory LineItem.fromJson(Map<String, dynamic> json) => LineItem(
-        id: json['id'] as int?,
+        price: double.parse("${json['price']}"),
         name: json['name'] as String?,
         productId: json['product_id'] as int?,
         variationId: json['variation_id'] as int?,
@@ -60,7 +60,7 @@ class LineItem {
         taxes: json['taxes'] as List<dynamic>?,
         metaData: json['meta_data'] as List<dynamic>?,
         sku: json['sku'] as String?,
-        price: json['price'] as double?,
+        // price: json['price'] as double?,
         parentName: json['parent_name'] as dynamic,
         product: json['product'] == null
             ? null

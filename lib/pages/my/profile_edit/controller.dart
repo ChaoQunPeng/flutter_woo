@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:08
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 18:21:36
+ * @LastEditTime: 2024-06-13 18:34:14
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/profile_edit/controller.dart
  * @Description: 
  */
@@ -63,6 +63,25 @@ class ProfileEditController extends GetxController {
     lastNameController.text = profile.lastName ?? "";
     emailController.text = profile.email ?? "";
     update(["profile_edit"]);
+  }
+
+  // 保存
+  Future<void> onSave() async {
+    if ((formKey.currentState as FormState).validate()) {
+      // 密码 email 不修改 影响登录
+
+      // 提交
+      UserProfileModel profile = await UserApi.saveBaseInfo(UserProfileModel(
+        firstName: firstNameController.text,
+        lastName: lastNameController.text,
+        // email: emailController.text,
+      ));
+
+      // 更新本地
+      UserService.to.setProfile(profile);
+      Loading.success();
+      update(["profile_edit"]);
+    }
   }
 
   void onTap() {}

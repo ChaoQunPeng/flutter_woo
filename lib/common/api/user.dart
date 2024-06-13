@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-06 13:59:50
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 22:18:10
+ * @LastEditTime: 2024-06-13 18:33:57
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/api/user.dart
  * @Description: 
  */
@@ -73,5 +73,18 @@ class UserApi {
       continents.add(ContinentsModel.fromJson(item));
     }
     return continents;
+  }
+
+   /// 保存用户 first name 、 last name 、 email
+  static Future<UserProfileModel> saveBaseInfo(UserProfileModel req) async {
+    var res = await WPHttpService.to.put(
+      '/users/me',
+      data: {
+        "first_name": req.firstName,
+        "last_name": req.lastName,
+        "email": req.email,
+      },
+    );
+    return UserProfileModel.fromJson(res.data);
   }
 }

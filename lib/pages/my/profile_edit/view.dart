@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:08
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 18:24:00
+ * @LastEditTime: 2024-06-13 18:36:08
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/profile_edit/view.dart
  * @Description: 
  */
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
+import 'package:validatorless/validatorless.dart';
 
 import 'index.dart';
 
@@ -43,14 +44,99 @@ class ProfileEditPage extends GetView<ProfileEditController> {
     ).card().height(120.h).paddingBottom(AppSpace.card);
   }
 
-  //  profile 表单
+//  profile 表单
   Widget _buildProfileForm() {
-    return const Text("profile 表单");
+    return <Widget>[
+      // first name
+      TextFormWidget(
+        controller: controller.firstNameController,
+        labelText: LocaleKeys.profileEditFirstName.tr,
+        validator: Validatorless.multiple([
+          Validatorless.required("The field is obligatory"),
+          Validatorless.min(
+              3, "Length cannot be less than @size".trParams({"size": "3"})),
+          Validatorless.max(18,
+              "Length cannot be greater than @size".trParams({"size": "18"})),
+        ]),
+      ),
+
+      // last name
+      TextFormWidget(
+        controller: controller.lastNameController,
+        labelText: LocaleKeys.profileEditLastName.tr,
+        validator: Validatorless.multiple([
+          Validatorless.required("The field is obligatory"),
+          Validatorless.min(
+              3, "Length cannot be less than @size".trParams({"size": "3"})),
+          Validatorless.max(18,
+              "Length cannot be greater than @size".trParams({"size": "18"})),
+        ]),
+      ),
+
+      // Email
+      TextFormWidget(
+        keyboardType: TextInputType.emailAddress,
+        controller: controller.emailController,
+        labelText: LocaleKeys.profileEditEmail.tr,
+        validator: Validatorless.multiple([
+          Validatorless.required("The field is obligatory"),
+          Validatorless.email(LocaleKeys.validatorEmail.tr),
+        ]),
+      ),
+      // end
+    ].toColumn().paddingAll(AppSpace.card).card().paddingBottom(AppSpace.card);
   }
 
   //  password 表单
   Widget _buildPasswordForm() {
-    return const Text("password 表单");
+    return <Widget>[
+      // old password
+      TextFormWidget(
+        isObscure: true,
+        keyboardType: TextInputType.visiblePassword,
+        controller: controller.oldPasswordController,
+        labelText: LocaleKeys.profileEditOldPassword.tr,
+        hintText: LocaleKeys.profileEditPasswordTip.tr,
+        validator: Validatorless.multiple([
+          Validatorless.min(
+              3, "Length cannot be less than @size".trParams({"size": "3"})),
+          Validatorless.max(18,
+              "Length cannot be greater than @size".trParams({"size": "18"})),
+        ]),
+      ),
+
+      // new password
+      TextFormWidget(
+        isObscure: true,
+        keyboardType: TextInputType.visiblePassword,
+        controller: controller.newPasswordController,
+        labelText: LocaleKeys.profileEditNewPassword.tr,
+        hintText: LocaleKeys.profileEditPasswordTip.tr,
+        validator: Validatorless.multiple([
+          Validatorless.min(
+              3, "Length cannot be less than @size".trParams({"size": "3"})),
+          Validatorless.max(18,
+              "Length cannot be greater than @size".trParams({"size": "18"})),
+        ]),
+      ),
+
+      // confirm password
+      TextFormWidget(
+        isObscure: true,
+        keyboardType: TextInputType.visiblePassword,
+        controller: controller.confirmNewPasswordController,
+        labelText: LocaleKeys.profileEditConfirmPassword.tr,
+        hintText: LocaleKeys.profileEditPasswordTip.tr,
+        validator: Validatorless.multiple([
+          Validatorless.min(
+              3, "Length cannot be less than @size".trParams({"size": "3"})),
+          Validatorless.max(18,
+              "Length cannot be greater than @size".trParams({"size": "18"})),
+        ]),
+      ),
+
+      // end
+    ].toColumn().paddingAll(AppSpace.card).card();
   }
 
 // 主视图
@@ -75,6 +161,8 @@ class ProfileEditPage extends GetView<ProfileEditController> {
         // 保存按钮
         ButtonWidget.primary(
           LocaleKeys.commonBottomSave.tr,
+          onTap: controller.onSave, // 保存 tap 事件
+          height: AppSpace.buttonHeight,
         ).paddingHorizontal(AppSpace.page),
       ].toColumn().padding(
             top: 45.h,

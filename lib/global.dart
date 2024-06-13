@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 19:17:55
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-08 13:07:56
+ * @LastEditTime: 2024-06-13 10:02:45
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/global.dart
  * @Description: 
  */
@@ -32,6 +32,7 @@ class Global {
     ]).whenComplete(() {});
     Get.put<WPHttpService>(WPHttpService());
     Get.put<UserService>(UserService());
+    Get.put<CartService>(CartService());
   }
 
 // 系统样式

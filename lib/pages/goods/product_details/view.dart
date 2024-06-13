@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-11 14:26:43
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-11 18:53:49
+ * @LastEditTime: 2024-06-13 10:04:13
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/goods/product_details/view.dart
  * @Description: 
  */
@@ -173,6 +173,7 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
             // 加入购物车
             ButtonWidget.secondary(
               LocaleKeys.gDetailBtnAddCart.tr,
+              onTap: controller.onAddCartTap, // 加入购物车事件
             ).expanded(),
 
             // 间距

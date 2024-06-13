@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 22:17:52
+ * @LastEditTime: 2024-06-13 09:52:01
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/models/index.dart
  * @Description: 
  */
@@ -26,5 +26,6 @@ export 'woo/tags_model/tags_model.dart';
 export 'woo/order_model/order_model.dart';
 export 'woo/order_model/billing.dart';
 export 'woo/order_model/shipping.dart';
-export './woo/continents_model/continents_model.dart';
-export './woo/continents_model/country.dart';
+export './woo/order_model/line_item.dart';
+export 'woo/continents_model/continents_model.dart';
+export 'woo/continents_model/country.dart';

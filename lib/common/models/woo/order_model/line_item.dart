@@ -1,4 +1,13 @@
-import 'product.dart';
+/*
+ * @Author: PengChaoQun 1152684231@qq.com
+ * @Date: 2024-06-12 18:08:24
+ * @LastEditors: PengChaoQun 1152684231@qq.com
+ * @LastEditTime: 2024-06-13 09:46:06
+ * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/models/woo/order_model/line_item.dart
+ * @Description: 
+ */
+
+import '../product_model/product_model.dart';
 
 class LineItem {
   int? id;
@@ -14,9 +23,9 @@ class LineItem {
   List<dynamic>? taxes;
   List<dynamic>? metaData;
   String? sku;
-  int? price;
+  double? price;
   dynamic parentName;
-  Product? product;
+  ProductModel? product;
 
   LineItem({
     this.id,
@@ -51,11 +60,11 @@ class LineItem {
         taxes: json['taxes'] as List<dynamic>?,
         metaData: json['meta_data'] as List<dynamic>?,
         sku: json['sku'] as String?,
-        price: json['price'] as int?,
+        price: json['price'] as double?,
         parentName: json['parent_name'] as dynamic,
         product: json['product'] == null
             ? null
-            : Product.fromJson(json['product'] as Map<String, dynamic>),
+            : ProductModel.fromJson(json['product'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {

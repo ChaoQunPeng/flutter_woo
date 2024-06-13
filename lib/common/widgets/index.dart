@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 16:24:42
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 10:40:11
+ * @LastEditTime: 2024-06-13 18:11:10
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/widgets/index.dart
  * @Description: 
  */
@@ -18,3 +18,4 @@ export './navigation.dart';
 export './icon_text.dart';
 export './list_tile.dart';
 export './checkbox.dart';
+export './dialog.dart';

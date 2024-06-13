@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:08
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 17:52:36
+ * @LastEditTime: 2024-06-13 18:24:00
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/profile_edit/view.dart
  * @Description: 
  */
@@ -21,17 +21,26 @@ class ProfileEditPage extends GetView<ProfileEditController> {
     return ListTileWidget(
       title: TextWidget.body1(LocaleKeys.profileEditMyPhoto.tr),
       trailing: [
-        ImageWidget.url(
-          // UserService.to.profile.avatarUrl,
-          "https://i0.hdslb.com/bfs/face/ba49a43eae4793c261e1744a1ba1f8a1f3bc3047.jpg@120w_120h_1c.avif",
-          width: 50.w,
-          height: 50.w,
-          fit: BoxFit.cover,
-          radius: 25.w,
-        ),
+        controller.filePhoto != null
+            ? ImageWidget.file(
+                controller.filePhoto?.path ?? "",
+                width: 50.w,
+                height: 50.w,
+                fit: BoxFit.cover,
+                radius: 25.w,
+              )
+            : ImageWidget.url(
+                // UserService.to.profile.avatarUrl,
+                "https://i0.hdslb.com/bfs/face/ba49a43eae4793c261e1744a1ba1f8a1f3bc3047.jpg@120w_120h_1c.avif",
+                width: 50.w,
+                height: 50.w,
+                fit: BoxFit.cover,
+                radius: 25.w,
+              ),
       ],
       padding: EdgeInsets.all(AppSpace.card),
-    ).card().height(90.h).paddingBottom(AppSpace.card);
+      onTap: controller.onSelectPhoto,
+    ).card().height(120.h).paddingBottom(AppSpace.card);
   }
 
   //  profile 表单

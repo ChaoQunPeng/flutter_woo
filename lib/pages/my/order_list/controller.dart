@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:23
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 14:50:21
+ * @LastEditTime: 2024-06-13 15:01:34
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/order_list/controller.dart
  * @Description: 
  */
@@ -98,8 +98,10 @@ class OrderListController extends GetxController {
     refreshController.dispose();
   }
 
-  // 订单详情
-  void onOrderItemTap(OrderModel order) {}
+  /// 订单详情
+  void onOrderItemTap(OrderModel order) {
+    Get.toNamed(RouteNames.myOrderDetails, arguments: order);
+  }
 
   _initData() {
     update(["order_list"]);

@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:09
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:16:58
+ * @LastEditTime: 2024-06-13 11:28:24
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/cart_index/controller.dart
  * @Description: 
  */
@@ -47,6 +47,12 @@ class CartIndexController extends GetxController {
     } else {
       Loading.error("Coupon code is not valid.");
     }
+  }
+
+  // 修改订单数量
+  Future<void> onChangeQuantity(LineItem item, int quantity) async {
+    CartService.to.changeQuantity(item.productId!, quantity);
+    update(["cart_index"]);
   }
 
   // 全选

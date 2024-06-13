@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:09
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:17:51
+ * @LastEditTime: 2024-06-13 11:28:57
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/cart_index/view.dart
  * @Description: 
  */
@@ -30,6 +30,9 @@ class CartIndexPage extends GetView<CartIndexController> {
           // 选中回调
           onSelect: (isSelected) =>
               controller.onSelect(item.productId!, isSelected),
+          // 修改数量
+          onChangeQuantity: (quantity) =>
+              controller.onChangeQuantity(item, quantity),
         ).paddingAll(AppSpace.card).card();
       },
       separatorBuilder: (BuildContext context, int index) {

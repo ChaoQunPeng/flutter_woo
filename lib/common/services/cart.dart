@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-13 09:48:22
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 09:49:18
+ * @LastEditTime: 2024-06-13 11:15:59
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/services/cart.dart
  * @Description: 
  */
@@ -10,13 +10,30 @@ import 'package:get/get.dart';
 
 import '../index.dart';
 
-
 /// 购物车服务
 class CartService extends GetxService {
   static CartService get to => Get.find();
 
   /// 购物车商品
   final List<LineItem> lineItems = RxList<LineItem>();
+
+  /// 商品数量
+  int get lineItemsCount => lineItems.length;
+
+  /// 运费
+  double get shipping => 0;
+
+  /// 折扣
+  double get discount => 0;
+
+  /// 商品合计价格
+  double get totalItemsPrice =>
+      lineItems.fold<double>(0, (double previousValue, LineItem element) {
+        return previousValue + double.parse(element.total ?? "0");
+      });
+
+  /// 优惠券列表
+  final List<CouponsModel> lineCoupons = [];
 
   /// 加入商品
   void addCart(LineItem item) {
@@ -64,18 +81,15 @@ class CartService extends GetxService {
     lineItems.clear();
   }
 
-  /// 商品数量
-  int get lineItemsCount => lineItems.length;
-
-  /// 运费
-  double get shipping => 0;
-
-  /// 折扣
-  double get discount => 0;
-
-  /// 商品合计价格
-  double get totalItemsPrice =>
-      lineItems.fold<double>(0, (double previousValue, LineItem element) {
-        return previousValue + double.parse(element.total ?? "0");
-      });
+  /// 使用优惠券
+  bool applyCoupon(CouponsModel item) {
+    // 是否有重复
+    int index = lineCoupons.indexWhere((element) => element.id == item.id);
+    if (index >= 0) {
+      return false;
+    }
+    // 添加
+    lineCoupons.add(item);
+    return true;
+  }
 }

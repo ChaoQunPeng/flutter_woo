@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:09
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 10:50:03
+ * @LastEditTime: 2024-06-13 11:17:51
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/cart_index/view.dart
  * @Description: 
  */
@@ -46,6 +46,8 @@ class CartIndexPage extends GetView<CartIndexController> {
       InputWidget.textBorder(
         hintText: "Voucher Code",
         fillColor: AppColors.surface,
+        // 输入优惠券代码
+        onChanged: (value) => controller.couponCode = value,
       ).expanded(),
 
       SizedBox(
@@ -55,6 +57,7 @@ class CartIndexPage extends GetView<CartIndexController> {
       // 应用按钮
       ButtonWidget.text(
         LocaleKeys.gCartBtnApplyCode.tr,
+        onTap: controller.onApplyCoupon, // 应用事件
         textColor: AppColors.highlight,
         textSize: 12.sp,
         textWeight: FontWeight.w500,

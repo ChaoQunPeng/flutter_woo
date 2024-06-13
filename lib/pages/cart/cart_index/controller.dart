@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:09
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 10:41:21
+ * @LastEditTime: 2024-06-13 11:16:58
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/cart_index/controller.dart
  * @Description: 
  */
@@ -26,6 +26,27 @@ class CartIndexController extends GetxController {
   // 是否选中
   bool isSelected(int productId) {
     return selectedIds.any((val) => val == productId);
+  }
+
+  // 应用优惠券, 568935ab
+  Future<void> onApplyCoupon() async {
+    if (couponCode.isEmpty) {
+      Loading.error("Voucher code empty.");
+      return;
+    }
+    CouponsModel? coupon = await CouponApi.couponDetail(couponCode);
+    if (coupon != null) {
+      couponCode = "";
+      bool isSuccess = CartService.to.applyCoupon(coupon);
+      if (isSuccess) {
+        Loading.success("Coupon applied.");
+      } else {
+        Loading.error("Coupon is already applied.");
+      }
+      update(["cart_index"]);
+    } else {
+      Loading.error("Coupon code is not valid.");
+    }
   }
 
   // 全选

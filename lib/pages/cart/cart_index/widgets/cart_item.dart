@@ -51,7 +51,6 @@ class CartItem extends StatelessWidget {
         size: 20.sp,
       ).paddingRight(AppSpace.iconTextSmail),
 
-      
       // 图片
       ImageWidget.url(
         Convert.aliImageResize(

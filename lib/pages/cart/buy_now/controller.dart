@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:16
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:33:35
+ * @LastEditTime: 2024-06-13 11:57:48
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/buy_now/controller.dart
  * @Description: 
  */
@@ -23,14 +23,30 @@ class BuyNowController extends GetxController {
     AssetsImages.pPaypalPng,
   ];
 
+  // 送货地址
+  String shippingAddress = "";
+
   // 下单 checkout
   void onCheckout() async {}
 
   _initData() {
+    shippingAddress = UserService.to.shipping;
+
     update(["buy_now"]);
   }
 
   void onTap() {}
+
+  // goto 送货地址修改
+  Future<void> onShippingTap() async {
+    var result = await Get.toNamed(RouteNames.myMyAddress,
+        arguments: {"type": "Shipping"});
+    if (result != null && result == true) {
+      shippingAddress = UserService.to.shipping;
+      update(["buy_now"]);
+    }
+  }
+  
 
   // @override
   // void onInit() {

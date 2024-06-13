@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-07 23:46:31
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-12 17:35:47
+ * @LastEditTime: 2024-06-13 11:57:21
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/common/services/user.dart
  * @Description: 
  */
@@ -28,6 +28,10 @@ class UserService extends GetxService {
 
   /// 是否有令牌 token
   bool get hasToken => token.isNotEmpty;
+
+  /// 送货地址
+  String get shipping =>
+      "${profile.shipping?.address1}, ${profile.shipping?.postcode}, ${profile.shipping?.state}, ${profile.shipping?.country}";
 
   @override
   void onInit() {

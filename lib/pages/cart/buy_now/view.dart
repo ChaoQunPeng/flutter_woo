@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:19:16
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 11:35:42
+ * @LastEditTime: 2024-06-13 11:58:28
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/cart/buy_now/view.dart
  * @Description: 
  */
@@ -79,6 +79,32 @@ class BuyNowPage extends GetView<BuyNowController> {
     );
   }
 
+  // 送货地址
+  Widget _buildShipping() {
+    return <Widget>[
+      // 文字
+      TextWidget.body1(controller.shippingAddress).expanded(),
+
+      // 图标
+      IconWidget.icon(
+        Icons.arrow_drop_down,
+        size: 32,
+      ),
+    ]
+        .toRow()
+        .paddingAll(AppSpace.button)
+        .decorated(
+          color: AppColors.surfaceVariant,
+          border: Border.all(
+            color: AppColors.outline,
+            width: 0.5,
+          ),
+          borderRadius: BorderRadius.circular(AppRadius.button),
+        )
+        .onTap(controller.onShippingTap)
+        .paddingBottom(AppSpace.listRow);
+  }
+
   // 主视图
   Widget _buildView() {
     return <Widget>[
@@ -88,6 +114,7 @@ class BuyNowPage extends GetView<BuyNowController> {
 
       // 送货地址
       _buildTitle(LocaleKeys.placeOrderShippingAddress.tr),
+      _buildShipping(),
 
       // 数量
       _buildTitle(LocaleKeys.placeOrderQuantity.tr),

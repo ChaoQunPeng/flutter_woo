@@ -2,7 +2,7 @@
  * @Author: PengChaoQun 1152684231@qq.com
  * @Date: 2024-06-01 18:18:33
  * @LastEditors: PengChaoQun 1152684231@qq.com
- * @LastEditTime: 2024-06-13 15:40:11
+ * @LastEditTime: 2024-06-13 15:49:00
  * @FilePath: /flutter_woo_commerce_getx_learn/lib/pages/my/order_details/view.dart
  * @Description: 
  */
@@ -13,6 +13,7 @@ import 'package:get/get.dart';
 
 import 'index.dart';
 import 'widgets/bill_address.dart';
+import 'widgets/products_list.dart';
 
 class OrderDetailsPage extends GetView<OrderDetailsController> {
   const OrderDetailsPage({Key? key}) : super(key: key);
@@ -153,7 +154,10 @@ class OrderDetailsPage extends GetView<OrderDetailsController> {
 
   // 商品列表
   Widget _buildProductsList() {
-    return const Text("商品列表");
+    return BuildProductList(
+      lineItems: controller.order.lineItems ?? [],
+      currencySymbol: controller.order.currencySymbol,
+    ).paddingAll(AppSpace.card).card().paddingBottom(AppSpace.listRow);
   }
 
   // 小计
